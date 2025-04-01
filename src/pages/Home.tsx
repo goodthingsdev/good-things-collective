@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { ArrowRight, Code, Shield, Leaf, LineChart, GitMerge, Server } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,7 @@ const Home = () => {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-collective-beige/50">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="space-y-6 animate-fade-in">
@@ -33,11 +34,11 @@ const Home = () => {
               </div>
             </div>
             <div className="flex justify-center md:justify-end animate-fade-in">
-              <div className="relative">
+              <div className="relative rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="https://goodthings.dev/good-keyvisual-gfx-940px.jpg" 
-                  alt="GOOD!" 
-                  className="w-full max-w-md"
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                  alt="Minimalist workspace" 
+                  className="w-full max-w-md object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
             </div>
@@ -188,13 +189,22 @@ const Home = () => {
           <p className="text-lg opacity-75 max-w-2xl mx-auto mb-10">
             Send us your proposal or book a 30-minute call to discuss your ideas.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige hover:bg-collective-beige/10">
-              <a href="mailto:collective@goodthings.dev">Email us</a>
-            </Button>
-            <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
-              <Link to="/contact">Book a call</Link>
-            </Button>
+          <div className="flex flex-col items-center gap-8">
+            <div className="w-full max-w-sm">
+              <img 
+                src="https://goodthings.dev/good-keyvisual-gfx-940px.jpg" 
+                alt="GOOD!" 
+                className="w-full"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige hover:bg-collective-beige/10">
+                <a href="mailto:collective@goodthings.dev">Email us</a>
+              </Button>
+              <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
+                <Link to="/contact">Book a call</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
