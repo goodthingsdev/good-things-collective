@@ -18,9 +18,13 @@ const Layout = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-collective-beige">
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="animate-pulse flex items-center justify-center">
-          <div className="text-4xl md:text-6xl font-bold">GOOD!</div>
+          <img 
+            src="https://goodthings.dev/good-keyvisual-gfx-940px.jpg" 
+            alt="GOOD!" 
+            className="w-full max-w-md"
+          />
         </div>
       </div>
     );

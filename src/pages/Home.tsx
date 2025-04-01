@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight, Code, Shield, Leaf, LineChart, GitMerge, Server } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,7 +7,7 @@ const Home = () => {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="space-y-6 animate-fade-in">
@@ -18,10 +17,8 @@ const Home = () => {
                 </div>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="block">Crafting secure,</span>
-                <span className="block">ethical, and privacy-</span>
-                <span className="block">focused digital</span>
-                <span className="block">solutions</span>
+                <span className="block">Secure, ethical</span>
+                <span className="block">digital solutions</span>
               </h1>
               <p className="text-lg opacity-75 max-w-md">
                 We're a remote-first team of engineers passionate about creating sustainable, planet-positive technology.
@@ -38,7 +35,7 @@ const Home = () => {
             <div className="flex justify-center md:justify-end animate-fade-in">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/762fefac-5d79-4490-9917-579f60d97be4.png" 
+                  src="https://goodthings.dev/good-keyvisual-gfx-940px.jpg" 
                   alt="GOOD!" 
                   className="w-full max-w-md"
                 />

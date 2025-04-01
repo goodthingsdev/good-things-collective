@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight, GitMerge, Code, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,24 +7,16 @@ const About = () => {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="py-20 md:py-32">
-        <div className="container max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">About GOOD!</h1>
-              <p className="text-lg opacity-75 max-w-md">
-                We are a tight-knit, remote-first team of engineers with years of successful collaboration, combining deep experience in commercial projects with a passion for innovation and open-source contributions.
-              </p>
-            </div>
-            <div className="flex justify-center md:justify-end animate-fade-in">
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/762fefac-5d79-4490-9917-579f60d97be4.png" 
-                  alt="GOOD!" 
-                  className="w-full max-w-md"
-                />
-              </div>
-            </div>
+      <section className="py-0 md:py-0 min-h-[80vh]">
+        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+          <div className="space-y-6 p-6 md:p-12 lg:p-16 flex flex-col justify-center">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">About GOOD!</h1>
+            <p className="text-lg opacity-75 max-w-md">
+              We are a tight-knit, remote-first team of engineers with years of successful collaboration, combining deep experience in commercial projects with a passion for innovation and open-source contributions.
+            </p>
+          </div>
+          <div className="bg-cover bg-center h-full min-h-[50vh] md:min-h-full" style={{ backgroundImage: 'url(/lovable-uploads/762fefac-5d79-4490-9917-579f60d97be4.png)' }}>
+            {/* Background image div - intentionally empty */}
           </div>
         </div>
       </section>
