@@ -11,8 +11,8 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 opacity-20">
           <img 
-            src="/lovable-uploads/762fefac-5d79-4490-9917-579f60d97be4.png" 
-            alt="Technological Pattern" 
+            src="/lovable-uploads/3f0413f6-31be-4eb3-bf38-e53d02dc0532.png" 
+            alt="Abstract Technological Pattern" 
             className="w-full h-full object-cover"
           />
         </div>
