@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ChevronRight, Leaf, Lock, Globe } from "lucide-react";
+import { ChevronRight, Leaf, Lock, Globe, Github, Discord } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -22,6 +22,12 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-full flex items-center justify-center bg-collective-beige/10 hover:bg-collective-orange transition-colors">
                 <Globe size={18} className="text-collective-beige" />
               </div>
+              <a href="https://github.com/goodcollective" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-collective-beige/10 hover:bg-collective-orange transition-colors">
+                <Github size={18} className="text-collective-beige" />
+              </a>
+              <a href="https://discord.gg/goodcollective" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-collective-beige/10 hover:bg-collective-orange transition-colors">
+                <Discord size={18} className="text-collective-beige" />
+              </a>
             </div>
           </div>
           

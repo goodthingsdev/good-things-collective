@@ -7,25 +7,49 @@ import { Separator } from "@/components/ui/separator";
 const CaseStudies = () => {
   return (
     <div className="pt-24">
-      {/* Hero Section */}
-      <section className="py-20 md:py-32">
+      {/* Hero Section - Made shorter */}
+      <section className="py-12 md:py-16 bg-collective-beige/30">
         <div className="container max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">Our Work</h1>
-              <p className="text-lg opacity-75 max-w-md">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-2">Our Work</h1>
+              <p className="text-lg opacity-75 max-w-xl">
                 Explore our case studies showcasing our expertise in secure, ethical, and sustainable digital solutions.
               </p>
             </div>
-            <div className="flex justify-center md:justify-end animate-fade-in">
-              <div className="bg-pattern h-64 w-full"></div>
+            <div className="mt-6 md:mt-0">
+              <Button asChild variant="outline">
+                <Link to="/contact">Start a project <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Case Studies Grid - Moved up */}
+      <section className="section pt-16">
+        <div className="section-inner">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <CaseStudyCard 
+              title="AgTrack: Farm-to-Table Traceability Platform"
+              category="Security & Traceability"
+              description="A comprehensive solution for tracking agricultural products from farm to consumer, ensuring transparency, quality control, and sustainability throughout the supply chain."
+              image="/lovable-uploads/d4412982-a3ba-47b1-87fd-d636a2ae6bb6.png"
+              technologies={["React", "Node.js", "Hyperledger Fabric", "AWS"]}
+            />
+            <CaseStudyCard 
+              title="SecureChain: Blockchain Supply Verification"
+              category="Security & Traceability"
+              description="A blockchain-based verification system for supply chain integrity, ensuring products are authentic and ethically sourced."
+              image="/lovable-uploads/4ea9065d-0225-4015-bb87-dee6fa6675b2.png"
+              technologies={["React", "Node.js", "Hyperledger Fabric", "AWS"]}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Featured Case Study */}
-      <section className="section bg-collective-black text-collective-beige">
+      <section className="section bg-collective-black text-collective-beige pt-12 pb-16">
         <div className="section-inner">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
@@ -75,19 +99,12 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* Case Studies Grid */}
+      {/* More Case Studies Grid */}
       <section className="section">
         <div className="section-inner">
           <h2 className="text-3xl font-bold mb-12">More Case Studies</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            <CaseStudyCard 
-              title="SecureChain: Blockchain Supply Verification"
-              category="Security & Traceability"
-              description="A blockchain-based verification system for supply chain integrity, ensuring products are authentic and ethically sourced."
-              image="/lovable-uploads/4ea9065d-0225-4015-bb87-dee6fa6675b2.png"
-              technologies={["React", "Node.js", "Hyperledger Fabric", "AWS"]}
-            />
             <CaseStudyCard 
               title="EcoTrack: Carbon Footprint Monitoring"
               category="Sustainability"
@@ -148,7 +165,7 @@ const CaseStudies = () => {
             We're passionate about creating technology that makes a positive impact. Reach out to discuss your project.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige hover:bg-collective-beige/10">
+            <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
               <a href="mailto:collective@goodthings.dev">Email us</a>
             </Button>
             <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">

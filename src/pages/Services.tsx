@@ -8,8 +8,17 @@ const Services = () => {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="py-20 md:py-32">
-        <div className="container max-w-6xl mx-auto px-6">
+      <section className="py-20 md:py-32 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img 
+            src="/lovable-uploads/3f0413f6-31be-4eb3-bf38-e53d02dc0532.png" 
+            alt="Abstract Technological Pattern" 
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+        
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className="space-y-6 animate-fade-in">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight">Our Services</h1>
@@ -177,7 +186,7 @@ const Services = () => {
             Send us your proposal or book a 30-minute call to discuss your ideas.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige hover:bg-collective-beige/10">
+            <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
               <a href="mailto:collective@goodthings.dev">Email us</a>
             </Button>
             <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">

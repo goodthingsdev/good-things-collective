@@ -10,22 +10,13 @@ const CTASection = () => {
         <p className="text-lg opacity-75 max-w-2xl mx-auto mb-10">
           Send us your proposal or book a 30-minute call to discuss your ideas.
         </p>
-        <div className="flex flex-col items-center gap-8">
-          <div className="w-full max-w-sm">
-            <img 
-              src="https://goodthings.dev/good-keyvisual-gfx-940px.jpg" 
-              alt="GOOD!" 
-              className="w-full"
-            />
-          </div>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige hover:bg-collective-beige/10">
-              <a href="mailto:collective@goodthings.dev">Email us</a>
-            </Button>
-            <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
-              <Link to="/contact">Book a call</Link>
-            </Button>
-          </div>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
+            <a href="mailto:collective@goodthings.dev">Email us</a>
+          </Button>
+          <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
+            <Link to="/contact">Book a call</Link>
+          </Button>
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { ArrowRight, GitMerge, Code, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,8 +8,17 @@ const About = () => {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="py-0 md:py-0 min-h-[80vh]">
-        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+      <section className="py-0 md:py-0 min-h-[80vh] relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img 
+            src="/lovable-uploads/3f0413f6-31be-4eb3-bf38-e53d02dc0532.png" 
+            alt="Abstract Technological Pattern" 
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 h-full relative z-10">
           <div className="space-y-6 p-6 md:p-12 lg:p-16 flex flex-col justify-center">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">About GOOD!</h1>
             <p className="text-lg opacity-75 max-w-md">
@@ -134,44 +144,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* How We Operate Section */}
-      <section className="section bg-collective-beige/50">
-        <div className="section-inner">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">How We Operate</h2>
-              <div className="space-y-8">
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold">2 Week Sprints, Four-day workweek</h3>
-                  <p className="opacity-75">
-                    Our team works with a 2 week cycle, executing scoped user stories, without exceeding 4 days/week for single engagement.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Daily Standups</h3>
-                  <p className="opacity-75">
-                    We check in daily to make sure everyone is working efficiently and to make sure there are no blockers.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Friday Demo Day</h3>
-                  <p className="opacity-75">
-                    We often demo what we worked on each Friday to share awareness of what was accomplished and to expand our internal knowledge.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="order-first lg:order-last">
-              <img 
-                src="/lovable-uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png" 
-                alt="How we operate" 
-                className="rounded-lg shadow-md w-full max-w-md mx-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* How We Engage Section */}
       <section className="section">
         <div className="section-inner">
@@ -217,7 +189,7 @@ const About = () => {
             Send us your proposal or book a 30-minute call to discuss your ideas.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige hover:bg-collective-beige/10">
+            <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
               <a href="mailto:collective@goodthings.dev">Email us</a>
             </Button>
             <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
