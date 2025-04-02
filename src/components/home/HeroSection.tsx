@@ -10,7 +10,7 @@ const HeroSection = () => {
         <img 
           src="/lovable-uploads/3f0413f6-31be-4eb3-bf38-e53d02dc0532.png" 
           alt="Abstract Technological Pattern" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
       </div>
       
