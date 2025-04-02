@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Send, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -44,18 +44,20 @@ const Contact = () => {
 
   return (
     <div className="pt-24">
-      {/* Hero Section */}
-      <section className="py-20 md:py-32">
+      {/* Slimmer Hero Section */}
+      <section className="py-12 md:py-16 bg-collective-beige/30">
         <div className="container max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">Get in Touch</h1>
-              <p className="text-lg opacity-75 max-w-md">
-                Send us your proposal or book a 30-minute call to discuss your ideas. We're excited to hear from you.
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-2">Get in Touch</h1>
+              <p className="text-lg opacity-75 max-w-xl">
+                Send us your proposal or book a 30-minute call to discuss your ideas.
               </p>
             </div>
-            <div className="flex justify-center md:justify-end animate-fade-in">
-              <div className="bg-pattern h-64 w-full"></div>
+            <div className="mt-6 md:mt-0">
+              <Button asChild variant="outline">
+                <a href="mailto:collective@goodthings.dev">Email us <ArrowRight className="ml-2 h-4 w-4" /></a>
+              </Button>
             </div>
           </div>
         </div>
