@@ -7,16 +7,14 @@ const Home = () => {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-collective-beige/50 overflow-hidden">
+      <section className="relative py-20 md:py-32 bg-collective-black overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
-            alt="Background" 
+            src="/lovable-uploads/762fefac-5d79-4490-9917-579f60d97be4.png" 
+            alt="Technological Pattern" 
             className="w-full h-full object-cover"
           />
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-collective-black/40"></div>
         </div>
         
         {/* Content */}
@@ -24,7 +22,7 @@ const Home = () => {
           <div className="max-w-3xl">
             <div className="space-y-6 animate-fade-in">
               <div className="inline-block mb-4">
-                <div className="px-4 py-1 rounded-full bg-collective-beige/90 border border-collective-black/10 text-sm">
+                <div className="px-4 py-1 rounded-full bg-collective-beige/10 border border-collective-beige/20 text-sm text-collective-beige">
                   Code Collective
                 </div>
               </div>
