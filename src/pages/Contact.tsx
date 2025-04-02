@@ -45,7 +45,7 @@ const Contact = () => {
   return (
     <div className="pt-24">
       {/* Slimmer Hero Section */}
-      <section className="py-12 md:py-16 bg-collective-beige/30">
+      <section className="py-10 md:py-12 bg-collective-beige/30">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div>
