@@ -141,34 +141,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* How We Engage Section - Modified to remove image and display in column */}
-      <section className="section">
-        <div className="section-inner">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">How We Engage</h2>
-            <div className="space-y-10">
-              <div className="bg-collective-beige/20 p-8 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Development Stream</h3>
-                <p className="opacity-75">
-                  Embedded pod of engineers collaborate within a larger project team to co-deliver solutions. Provides scalability and flexibility for dynamic needs via team augmentation.
-                </p>
-              </div>
-              <div className="bg-collective-beige/20 p-8 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">End-to-End Project</h3>
-                <p className="opacity-75">
-                  Product development handled entirely by our team. Suitable for well-defined product requirements. Allows clients to focus on strategy while we manage execution.
-                </p>
-              </div>
-              <div className="text-center pt-6">
-                <Button asChild>
-                  <Link to="/contact">Work with us <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 bg-collective-black text-collective-beige">
         <div className="container max-w-6xl mx-auto px-6 text-center">
