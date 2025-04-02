@@ -1,6 +1,6 @@
 # Good Things Collective
 
-Micro site w/ case studies for our remote-first engineering collective Good Things Collective. 
+Micro site w/ case studies for remote-first engineering collective Good Things Collective. 
 
 ## Overview
 
