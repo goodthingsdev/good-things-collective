@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight, Code, GitMerge, Server, Shield, LineChart, Smartphone, Globe, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,7 +7,7 @@ const Services = () => {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="py-20 md:py-32 relative overflow-hidden">
+      <section className="py-16 md:py-24 relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 opacity-20">
           <img 
@@ -19,16 +18,11 @@ const Services = () => {
         </div>
         
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">Our Services</h1>
-              <p className="text-lg opacity-75 max-w-md">
-                We provide comprehensive software development services with a focus on security, sustainability, and ethical technology.
-              </p>
-            </div>
-            <div className="flex justify-center md:justify-end animate-fade-in">
-              <div className="bg-pattern h-64 w-full"></div>
-            </div>
+          <div className="space-y-6 animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">Our Services</h1>
+            <p className="text-lg opacity-75 max-w-3xl">
+              We provide comprehensive software development services with a focus on security, sustainability, and ethical technology.
+            </p>
           </div>
         </div>
       </section>

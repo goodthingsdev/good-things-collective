@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Code, GitMerge, Server, Shield, LineChart, ArrowRight } from "lucide-react";
+import { Code, GitMerge, Server, Shield, LineChart, ArrowRight, Database } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ExpertiseCard from "./ExpertiseCard";
 
@@ -32,7 +32,7 @@ const ExpertiseSection = () => {
                 title="AgTech & Traceability"
               />
               <ExpertiseCard 
-                icon={<GitMerge />}
+                icon={<Database />}
                 title="CI/CD Automation"
               />
             </div>
