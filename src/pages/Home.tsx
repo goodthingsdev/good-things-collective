@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight, Code, Shield, Leaf, LineChart, GitMerge, Server } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,38 +7,41 @@ const Home = () => {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="py-20 md:py-32 bg-collective-beige/50">
-        <div className="container max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <section className="relative py-20 md:py-32 bg-collective-beige/50 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+            alt="Background" 
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-collective-black/40"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
+          <div className="max-w-3xl">
             <div className="space-y-6 animate-fade-in">
               <div className="inline-block mb-4">
-                <div className="px-4 py-1 rounded-full bg-collective-black/5 border border-collective-black/10 text-sm">
+                <div className="px-4 py-1 rounded-full bg-collective-beige/90 border border-collective-black/10 text-sm">
                   Code Collective
                 </div>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-collective-beige">
                 <span className="block">Secure, ethical</span>
                 <span className="block">digital solutions</span>
               </h1>
-              <p className="text-lg opacity-75 max-w-md">
+              <p className="text-lg text-collective-beige/90 max-w-md">
                 We're a remote-first team of engineers passionate about creating sustainable, planet-positive technology.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
                   <Link to="/contact">Get in touch</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild variant="outline" size="lg" className="bg-transparent border-collective-beige text-collective-beige hover:bg-collective-beige/10">
                   <Link to="/case-studies">View our work</Link>
                 </Button>
-              </div>
-            </div>
-            <div className="flex justify-center md:justify-end animate-fade-in">
-              <div className="relative rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
-                  alt="Minimalist workspace" 
-                  className="w-full max-w-md object-cover transition-transform duration-700 hover:scale-105"
-                />
               </div>
             </div>
           </div>
