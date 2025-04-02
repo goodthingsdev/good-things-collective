@@ -214,11 +214,11 @@ const Contact = () => {
             />
             <FaqItem 
               question="How do you handle project management and communication?"
-              answer="We use a combination of tools like Slack for daily communication, Notion for documentation, and weekly video calls for in-depth discussions. We also provide regular progress updates and demonstrations."
+              answer="While experienced with tools like Slack, Asana, Jira, and Notion, we prefer open-source alternatives like Rocket.Chat, Affine, and Jitsi. We adapt our tool stack to your preferences while maintaining efficient collaboration and regular updates."
             />
             <FaqItem 
               question="What technologies do you specialize in?"
-              answer="We specialize in modern JavaScript stacks (React, Next.js, Node.js), cloud technologies (AWS, GCP, Azure), and have particular expertise in AgTech, traceability, and secure systems."
+              answer="We're technology generalists with expertise across the full stack, including mobile development (iOS, Android), DevOps, Web3, AI/ML, modern JavaScript (React, Next.js, Node.js), cloud platforms (AWS, GCP, Azure), and specialized domains like AgTech, traceability, and secure systems."
             />
             <FaqItem 
               question="Do you provide support after project completion?"
