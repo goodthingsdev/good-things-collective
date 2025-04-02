@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { ArrowRight, GitMerge, Code, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -140,38 +141,29 @@ const About = () => {
         </div>
       </section>
 
-      {/* How We Engage Section */}
+      {/* How We Engage Section - Modified to remove image and display in column */}
       <section className="section">
         <div className="section-inner">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-first lg:order-last">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">How We Engage</h2>
-              <div className="space-y-8">
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Development Stream</h3>
-                  <p className="opacity-75">
-                    Embedded pod of engineers collaborate within a larger project team to co-deliver solutions. Provides scalability and flexibility for dynamic needs via team augmentation.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold">End-to-End Project</h3>
-                  <p className="opacity-75">
-                    Product development handled entirely by our team. Suitable for well-defined product requirements. Allows clients to focus on strategy while we manage execution.
-                  </p>
-                </div>
-                <div className="pt-6">
-                  <Button asChild>
-                    <Link to="/contact">Work with us <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                  </Button>
-                </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">How We Engage</h2>
+            <div className="space-y-10">
+              <div className="bg-collective-beige/20 p-8 rounded-lg">
+                <h3 className="text-xl font-bold mb-4">Development Stream</h3>
+                <p className="opacity-75">
+                  Embedded pod of engineers collaborate within a larger project team to co-deliver solutions. Provides scalability and flexibility for dynamic needs via team augmentation.
+                </p>
               </div>
-            </div>
-            <div className="order-last lg:order-first">
-              <img 
-                src="/lovable-uploads/2a1cbd4c-b55c-4848-9c2b-60fb6c5765dc.png" 
-                alt="How we engage" 
-                className="rounded-lg shadow-md w-full max-w-md mx-auto"
-              />
+              <div className="bg-collective-beige/20 p-8 rounded-lg">
+                <h3 className="text-xl font-bold mb-4">End-to-End Project</h3>
+                <p className="opacity-75">
+                  Product development handled entirely by our team. Suitable for well-defined product requirements. Allows clients to focus on strategy while we manage execution.
+                </p>
+              </div>
+              <div className="text-center pt-6">
+                <Button asChild>
+                  <Link to="/contact">Work with us <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
