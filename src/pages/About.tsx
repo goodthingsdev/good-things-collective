@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 import { ArrowRight, GitMerge, Code, Lock } from "lucide-react";
@@ -101,7 +100,7 @@ const About = () => {
               name="Joerg Steiner"
               role="Senior Software Engineer"
               location="GER"
-              image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              image="/lovable-uploads/0b531ae5-6405-4059-8ad3-6242c2933fa4.png"
               square={true}
             />
             <TeamMember 
@@ -193,4 +192,3 @@ const TeamMember = ({ name, role, location, image, square = false }: { name: str
 };
 
 export default About;
-
