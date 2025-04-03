@@ -21,8 +21,7 @@ const TeamSection: React.FC = () => {
             image="/lovable-uploads/984d8341-b5f2-4536-8715-b1323031b223.png"
             square={true}
             linkedin="https://linkedin.com/in/lukas-sommer"
-            linkedin="https://github.com/lukesmmr"
-
+            github="https://github.com/lukesmmr"
           />
           <TeamMember 
             name="Joerg Steiner"
