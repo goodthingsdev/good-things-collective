@@ -78,11 +78,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Collective Section (formerly Team Section) */}
       <section className="section">
         <div className="section-inner">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Collective</h2>
             <p className="text-lg opacity-75 max-w-2xl mx-auto">
               A global team of passionate engineers working together to create meaningful technology.
             </p>
@@ -93,49 +93,57 @@ const About = () => {
               name="Lukas Sommer"
               role="Engineering Manager & Product Lead"
               location="PRT"
-              image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              image="/lovable-uploads/984d8341-b5f2-4536-8715-b1323031b223.png"
+              square={true}
             />
             <TeamMember 
               name="Joerg Steiner"
               role="Senior Software Engineer"
               location="GER"
               image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              square={true}
             />
             <TeamMember 
               name="Adam Zar"
               role="Senior Software Engineer"
               location="UK"
               image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              square={true}
             />
             <TeamMember 
               name="Taylor Allen"
               role="Full Stack Engineer"
               location="MEX"
               image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              square={true}
             />
             <TeamMember 
               name="Anton Oussik"
               role="DevOps & Cloud Architect"
               location="ESP"
               image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              square={true}
             />
             <TeamMember 
               name="Guillermo Chain"
               role="Full Stack Engineer"
               location="VEN"
               image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              square={true}
             />
             <TeamMember 
               name="Franz Gatzke"
               role="Senior Software Engineer"
               location="GER"
               image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              square={true}
             />
             <TeamMember 
               name="Erika Logie"
               role="UI/UX Designer"
               location="USA"
               image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              square={true}
             />
           </div>
         </div>
@@ -162,7 +170,7 @@ const About = () => {
   );
 };
 
-const TeamMember = ({ name, role, location, image }: { name: string; role: string; location: string; image: string }) => {
+const TeamMember = ({ name, role, location, image, square = false }: { name: string; role: string; location: string; image: string; square?: boolean }) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div className="relative">
@@ -172,7 +180,7 @@ const TeamMember = ({ name, role, location, image }: { name: string; role: strin
         <img 
           src={image} 
           alt={name} 
-          className="w-full h-48 object-cover"
+          className={`w-full ${square ? 'aspect-square' : 'h-48'} object-cover`}
         />
       </div>
       <div className="p-6">
