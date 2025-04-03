@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from "react-router-dom";
 import { ArrowRight, GitMerge, Code, Lock } from "lucide-react";
@@ -128,21 +129,21 @@ const About = () => {
               name="Guillermo Chain"
               role="Full Stack Engineer"
               location="VEN"
-              image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              placeholder={true}
               square={true}
             />
             <TeamMember 
               name="Franz Gatzke"
               role="Senior Software Engineer"
               location="GER"
-              image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              placeholder={true}
               square={true}
             />
             <TeamMember 
               name="Erika Logie"
               role="UI/UX Designer"
               location="USA"
-              image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              placeholder={true}
               square={true}
             />
           </div>
@@ -170,18 +171,38 @@ const About = () => {
   );
 };
 
-const TeamMember = ({ name, role, location, image, square = false }: { name: string; role: string; location: string; image: string; square?: boolean }) => {
+const TeamMember = ({ 
+  name, 
+  role, 
+  location, 
+  image, 
+  placeholder = false, 
+  square = false 
+}: { 
+  name: string; 
+  role: string; 
+  location: string; 
+  image?: string;
+  placeholder?: boolean;
+  square?: boolean;
+}) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div className="relative aspect-square">
         <div className="absolute top-0 right-0 bg-collective-black text-collective-beige px-2 py-1 text-xs z-10">
           {location}
         </div>
-        <img 
-          src={image} 
-          alt={name} 
-          className="w-full h-full object-cover object-center"
-        />
+        {placeholder ? (
+          <div className="w-full h-full bg-[#CCCCCC] flex items-center justify-center">
+            <span className="text-gray-500 font-medium">{name.charAt(0)}</span>
+          </div>
+        ) : (
+          <img 
+            src={image} 
+            alt={name} 
+            className="w-full h-full object-cover object-center"
+          />
+        )}
       </div>
       <div className="p-3 sm:p-4">
         <h3 className="text-sm font-bold">{name}</h3>
