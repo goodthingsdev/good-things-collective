@@ -1,4 +1,3 @@
-
 import React from 'react';
 import TeamMember from './TeamMember';
 
@@ -25,7 +24,7 @@ const TeamSection: React.FC = () => {
             name="Joerg Steiner"
             role="Senior Software Engineer"
             location="GER"
-            image="/lovable-uploads/0b531ae5-6405-4059-8ad3-6242c2933fa4.png"
+            image="/lovable-uploads/8529d64d-24ef-4b3c-8eec-f9f5d8b7c133.png"
             square={true}
           />
           <TeamMember 
