@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 import { ArrowRight, GitMerge, Code, Lock } from "lucide-react";
@@ -122,14 +121,14 @@ const About = () => {
               name="Anton Oussik"
               role="DevOps & Cloud Architect"
               location="ESP"
-              image="/lovable-uploads/63b81416-43ca-47f3-b798-6d205c891a5c.png"
+              image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
               square={true}
             />
             <TeamMember 
               name="Guillermo Chain"
               role="Full Stack Engineer"
               location="VEN"
-              placeholder={true}
+              image="/lovable-uploads/780ee1f3-50b3-4117-a3e2-70dac9c43c06.png"
               square={true}
             />
             <TeamMember 
