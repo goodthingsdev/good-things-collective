@@ -67,7 +67,7 @@ const TeamSection: React.FC = () => {
             name="Erika Logie"
             role="UI/UX Designer"
             location="USA"
-            placeholder={true}
+            image="/lovable-uploads/7c11e801-4d16-46a6-9c72-81c4fa9b3386.png"
             square={true}
           />
         </div>
