@@ -107,7 +107,7 @@ const About = () => {
               name="Adam Zar"
               role="Senior Software Engineer"
               location="UK"
-              image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              image="/lovable-uploads/ed132824-0b19-4398-8935-54fd5b53ab26.png"
               square={true}
             />
             <TeamMember 
