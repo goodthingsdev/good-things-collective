@@ -46,7 +46,7 @@ const TeamSection: React.FC = () => {
             name="Anton Oussik"
             role="DevOps & Cloud Architect"
             location="ESP"
-            image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+            image="/lovable-uploads/63b81416-43ca-47f3-b798-6d205c891a5c.png"
             square={true}
           />
           <TeamMember 
