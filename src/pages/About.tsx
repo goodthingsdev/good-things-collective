@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Link } from "react-router-dom";
 import { ArrowRight, GitMerge, Code, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -173,14 +174,14 @@ const About = () => {
 const TeamMember = ({ name, role, location, image, square = false }: { name: string; role: string; location: string; image: string; square?: boolean }) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-      <div className="relative">
-        <div className="absolute top-0 right-0 bg-collective-black text-collective-beige px-2 py-1 text-xs">
+      <div className="relative aspect-square">
+        <div className="absolute top-0 right-0 bg-collective-black text-collective-beige px-2 py-1 text-xs z-10">
           {location}
         </div>
         <img 
           src={image} 
           alt={name} 
-          className={`w-full ${square ? 'aspect-square h-[160px] object-cover object-center' : 'h-48 object-cover'}`}
+          className="w-full h-full object-cover object-center"
         />
       </div>
       <div className="p-3 sm:p-4">
@@ -192,3 +193,4 @@ const TeamMember = ({ name, role, location, image, square = false }: { name: str
 };
 
 export default About;
+
