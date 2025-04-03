@@ -114,7 +114,7 @@ const About = () => {
               name="Taylor Allen"
               role="Full Stack Engineer"
               location="MEX"
-              image="/lovable-uploads/50a62bde-a2f5-4845-a3ff-5f70c0b4b68e.png"
+              image="/lovable-uploads/910d6fc7-7447-434f-bf83-e71bc95d7ecf.png"
               square={true}
             />
             <TeamMember 
