@@ -60,7 +60,7 @@ const TeamSection: React.FC = () => {
             name="Franz Gatzke"
             role="Senior Software Engineer"
             location="GER"
-            placeholder={true}
+            image="/lovable-uploads/5b7075a6-e799-4cc8-93d1-82790fdd0cc9.png"
             square={true}
           />
           <TeamMember 
