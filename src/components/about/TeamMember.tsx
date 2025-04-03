@@ -42,23 +42,25 @@ const TeamMember: React.FC<TeamMemberProps> = ({
         )}
       </div>
       <div className="p-3 sm:p-4">
-        <h3 className="text-sm font-bold">{name}</h3>
-        <p className="text-xs opacity-75">{role}</p>
-        
-        {(linkedin || github) && (
-          <div className="flex gap-2 mt-2">
-            {linkedin && (
-              <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${name}'s LinkedIn profile`}>
-                <Linkedin size={16} className="text-gray-600 hover:text-collective-orange transition-colors" />
-              </a>
-            )}
-            {github && (
-              <a href={github} target="_blank" rel="noopener noreferrer" aria-label={`${name}'s GitHub profile`}>
-                <Github size={16} className="text-gray-600 hover:text-collective-orange transition-colors" />
-              </a>
-            )}
-          </div>
-        )}
+        <div className="flex justify-between items-center">
+          <h3 className="text-sm font-bold">{name}</h3>
+          
+          {(linkedin || github) && (
+            <div className="flex gap-2">
+              {linkedin && (
+                <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${name}'s LinkedIn profile`}>
+                  <Linkedin size={16} className="text-gray-600 hover:text-collective-orange transition-colors" />
+                </a>
+              )}
+              {github && (
+                <a href={github} target="_blank" rel="noopener noreferrer" aria-label={`${name}'s GitHub profile`}>
+                  <Github size={16} className="text-gray-600 hover:text-collective-orange transition-colors" />
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+        <p className="text-xs opacity-75 mt-1">{role}</p>
       </div>
     </div>
   );
