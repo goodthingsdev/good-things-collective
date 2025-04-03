@@ -180,7 +180,7 @@ const TeamMember = ({ name, role, location, image, square = false }: { name: str
         <img 
           src={image} 
           alt={name} 
-          className={`w-full ${square ? 'aspect-square h-[120px] object-cover object-top' : 'h-48 object-cover'}`}
+          className={`w-full ${square ? 'aspect-square h-[160px] object-cover object-center' : 'h-48 object-cover'}`}
         />
       </div>
       <div className="p-3 sm:p-4">
