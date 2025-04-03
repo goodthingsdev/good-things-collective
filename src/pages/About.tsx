@@ -79,16 +79,16 @@ const About = () => {
       </section>
 
       {/* Collective Section (formerly Team Section) */}
-      <section className="section">
+      <section className="section py-16 md:py-24">
         <div className="section-inner">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Collective</h2>
             <p className="text-lg opacity-75 max-w-2xl mx-auto">
               A global team of passionate engineers working together to create meaningful technology.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             <TeamMember 
               name="Lukas Sommer"
               role="Engineering Manager & Product Lead"
@@ -174,18 +174,18 @@ const TeamMember = ({ name, role, location, image, square = false }: { name: str
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div className="relative">
-        <div className="absolute top-0 right-0 bg-collective-black text-collective-beige px-3 py-1 text-sm">
+        <div className="absolute top-0 right-0 bg-collective-black text-collective-beige px-2 py-1 text-xs">
           {location}
         </div>
         <img 
           src={image} 
           alt={name} 
-          className={`w-full ${square ? 'aspect-square' : 'h-48'} object-cover`}
+          className={`w-full ${square ? 'aspect-square h-[120px] object-cover object-top' : 'h-48 object-cover'}`}
         />
       </div>
-      <div className="p-6">
-        <h3 className="text-lg font-bold">{name}</h3>
-        <p className="text-sm opacity-75">{role}</p>
+      <div className="p-3 sm:p-4">
+        <h3 className="text-sm font-bold">{name}</h3>
+        <p className="text-xs opacity-75">{role}</p>
       </div>
     </div>
   );
