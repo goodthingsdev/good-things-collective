@@ -36,7 +36,7 @@ const CaseStudies = () => {
               title="StoryBird.io: Product Storytelling Platform"
               category="Supply Chain & Consumer Engagement"
               description="A platform that enables brands to connect consumers with their product stories through transparent supply chain narratives. Consumers can access detailed product information via QR codes on packaging, store displays, or menus, creating an engaging and transparent shopping experience."
-              image="/lovable-uploads/storybird.png"
+              image="/lovable-uploads/SCR-20250404-koot.png"
               technologies={["React", "Node.js", "QR Code API", "AWS"]}
               projectUrl="https://storybird.io/"
             />
@@ -44,7 +44,7 @@ const CaseStudies = () => {
               title="NuMundo.org: Global Regenerative Living Network"
               category="Sustainability & Community"
               description="A platform connecting people with regenerative living projects worldwide, facilitating knowledge sharing and community building for sustainable living."
-              image="/lovable-uploads/numundo.png"
+              image="/lovable-uploads/SCR-20250404-kprt.png"
               technologies={["React", "Node.js", "PostgreSQL", "Mapbox", "Stripe"]}
               projectUrl="https://numundo.org/"
             />
@@ -56,10 +56,10 @@ const CaseStudies = () => {
       <FeaturedCaseStudy
         title="Producers Market: Global B2B Marketplace"
         description="A B2B platform connecting buyers directly with a global network of farmers, makers, and producers, enabling transparent and sustainable supply chains."
-        challenge="Creating a scalable platform that could connect buyers with producers across 100+ countries while maintaining supply chain transparency and sustainability impact tracking."
-        solution="We developed a comprehensive B2B marketplace that connects buyers directly to source, featuring a 4M+ farmer ecosystem with detailed sustainability impact tracking and supply chain traceability from the first mile."
-        results="Built a thriving global network of farmers and producers across 100+ countries, enabling direct B2B connections while providing full visibility into sustainability impact and supply chain traceability."
-        image="/lovable-uploads/producers-market.png"
+        challenge="Building a scalable platform to connect buyers with producers across 100+ countries while ensuring supply chain transparency and sustainability tracking."
+        solution="Developed a B2B marketplace connecting buyers directly to source, featuring a 4M+ farmer ecosystem with sustainability tracking and supply chain traceability."
+        results="Established a global network of farmers and producers across 100+ countries, enabling direct B2B connections with full sustainability and supply chain visibility."
+        image="/lovable-uploads/SCR-20250404-kqsg.png"
         projectUrl="https://producersmarket.com/"
       />
 
@@ -73,14 +73,14 @@ const CaseStudies = () => {
               title="Enterprise Reporting Platform with Metabase"
               category="Data Analytics & Business Intelligence"
               description="A scalable enterprise reporting solution that simplifies complex data structures through denormalization, enabling efficient business intelligence across multiple data sources."
-              image="/lovable-uploads/metabase-reporting.png"
+              image="/lovable-uploads/metabase-reports.png"
               technologies={["Metabase", "AWS Athena", "AWS DMS", "AWS Glue", "Serverless Architecture"]}
             />
             <CaseStudyCard 
               title="Grafana Loki Stack: Open-Source Logging Solution"
               category="DevOps & Monitoring"
               description="An open-source logging solution built on Grafana Loki, providing real-time log aggregation, analysis, and visualization for AWS servers."
-              image="/lovable-uploads/grafana-loki.png"
+              image="/lovable-uploads/SCR-20250404-kttc.png"
               technologies={["Grafana", "Loki", "Prometheus", "Node Exporter", "AWS"]}
               projectUrl="https://github.com/lukesmmr/grafana-loki-stack"
             />

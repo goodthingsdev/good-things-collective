@@ -50,7 +50,7 @@ const CaseStudyCard = ({
         {projectUrl && (
           <Button asChild variant="ghost" className="group">
             <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-              View case study 
+              View Project 
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>

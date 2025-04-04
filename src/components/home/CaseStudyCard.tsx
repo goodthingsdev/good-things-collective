@@ -22,7 +22,7 @@ const CaseStudyCard = ({ title, category, image }: CaseStudyCardProps) => {
         <div className="text-sm text-collective-orange">{category}</div>
         <h3 className="text-xl font-bold group-hover:text-collective-orange transition-colors">{title}</h3>
         <div className="flex items-center text-sm font-medium pt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-          <span>View case study</span>
+          <span>View Project</span>
           <ArrowRight className="ml-2 h-4 w-4" />
         </div>
       </div>

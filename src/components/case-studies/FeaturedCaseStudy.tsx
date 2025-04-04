@@ -50,7 +50,7 @@ const FeaturedCaseStudy = ({
               <div className="pt-4">
                 <Button asChild variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
                   <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-                    Full case study <ArrowUpRight className="ml-2 h-4 w-4" />
+                    View Project <ArrowUpRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
               </div>
