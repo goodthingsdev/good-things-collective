@@ -1,31 +1,35 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
+
 import CaseStudyCard from "./CaseStudyCard";
 
 const CaseStudySection = () => {
   return (
     <section className="section">
       <div className="section-inner">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+        <div className="mb-12 flex flex-col items-start justify-between md:flex-row md:items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">Selected Work</h2>
-            <p className="opacity-75 max-w-xl">Explore some of our recent projects</p>
+            <h2 className="mb-2 text-3xl font-bold md:text-4xl">Selected Work</h2>
+            <p className="max-w-xl opacity-75">Explore some of our recent projects</p>
           </div>
-          <Button asChild variant="outline" className="mt-4 md:mt-0 whitespace-nowrap">
-            <Link href="/case-studies">View all case studies <ArrowRight className="ml-2 h-4 w-4" /></Link>
+          <Button asChild variant="outline" className="mt-4 whitespace-nowrap md:mt-0">
+            <Link href="/case-studies">
+              View all case studies <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          <CaseStudyCard 
+
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+          <CaseStudyCard
             title="StoryBird.io: Product Storytelling Platform"
             category="Supply Chain & Consumer Engagement"
             image="/uploads/SCR-20250404-koot.png"
           />
-          <CaseStudyCard 
+          <CaseStudyCard
             title="NuMundo.org: Global Regenerative Living Network"
             category="Sustainability & Community"
             image="/uploads/SCR-20250404-kprt.png"

@@ -1,8 +1,8 @@
-import HeroSection from "@/components/home/HeroSection";
-import ValuesSection from "@/components/home/ValuesSection";
-import ExpertiseSection from "@/components/home/ExpertiseSection";
 import CaseStudySection from "@/components/home/CaseStudySection";
 import CTASection from "@/components/home/CTASection";
+import ExpertiseSection from "@/components/home/ExpertiseSection";
+import HeroSection from "@/components/home/HeroSection";
+import ValuesSection from "@/components/home/ValuesSection";
 
 export default function Page() {
   return (
@@ -14,4 +14,4 @@ export default function Page() {
       <CTASection />
     </div>
   );
-} 
+}

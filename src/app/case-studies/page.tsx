@@ -1,29 +1,33 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { config } from '@/lib/config';
+
 import CaseStudyCard from "@/components/case-studies/CaseStudyCard";
-import TestimonialCard from "@/components/case-studies/TestimonialCard";
 import FeaturedCaseStudy from "@/components/case-studies/FeaturedCaseStudy";
+import TestimonialCard from "@/components/case-studies/TestimonialCard";
+import { Button } from "@/components/ui/button";
+import { config } from "@/lib/config";
 
 export default function Page() {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="py-12 md:py-16 bg-collective-beige/30">
-        <div className="container max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+      <section className="bg-collective-beige/30 py-12 md:py-16">
+        <div className="container mx-auto max-w-6xl px-6">
+          <div className="flex flex-col items-center justify-between md:flex-row">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-2">Our Work</h1>
-              <p className="text-lg opacity-75 max-w-xl">
-                Explore our case studies showcasing our expertise in secure and ethical digital solutions.
+              <h1 className="mb-2 text-4xl font-bold leading-tight md:text-5xl">Our Work</h1>
+              <p className="max-w-xl text-lg opacity-75">
+                Explore our case studies showcasing our expertise in secure and ethical digital
+                solutions.
               </p>
             </div>
             <div className="mt-6 md:mt-0">
               <Button asChild variant="outline">
-                <Link href="/contact">Start a project <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link href="/contact">
+                  Start a project <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
@@ -33,8 +37,8 @@ export default function Page() {
       {/* Case Studies Grid */}
       <section className="section pt-16">
         <div className="section-inner">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            <CaseStudyCard 
+          <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2">
+            <CaseStudyCard
               title="StoryBird.io: Product Storytelling Platform"
               category="Supply Chain & Consumer Engagement"
               description="A platform that enables brands to connect consumers with their product stories through transparent supply chain narratives. Consumers can access detailed product information via QR codes on packaging, store displays, or menus, creating an engaging and transparent shopping experience."
@@ -42,7 +46,7 @@ export default function Page() {
               technologies={["React", "Node.js", "QR Code API", "AWS"]}
               projectUrl="https://storybird.io/"
             />
-            <CaseStudyCard 
+            <CaseStudyCard
               title="NuMundo.org: Global Regenerative Living Network"
               category="Sustainability & Community"
               description="A platform connecting people with regenerative living projects worldwide, facilitating knowledge sharing and community building for sustainable living."
@@ -68,17 +72,23 @@ export default function Page() {
       {/* More Case Studies Grid */}
       <section className="section">
         <div className="section-inner">
-          <h2 className="text-3xl font-bold mb-12">More Case Studies</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            <CaseStudyCard 
+          <h2 className="mb-12 text-3xl font-bold">More Case Studies</h2>
+
+          <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2">
+            <CaseStudyCard
               title="Enterprise Reporting Platform with Metabase"
               category="Data Analytics & Business Intelligence"
               description="A scalable enterprise reporting solution that simplifies complex data structures through denormalization, enabling efficient business intelligence across multiple data sources."
               image="/uploads/metabase-reports.png"
-              technologies={["Metabase", "AWS Athena", "AWS DMS", "AWS Glue", "Serverless Architecture"]}
+              technologies={[
+                "Metabase",
+                "AWS Athena",
+                "AWS DMS",
+                "AWS Glue",
+                "Serverless Architecture",
+              ]}
             />
-            <CaseStudyCard 
+            <CaseStudyCard
               title="Grafana Loki Stack: Open-Source Logging Solution"
               category="DevOps & Monitoring"
               description="An open-source logging solution built on Grafana Loki, providing real-time log aggregation, analysis, and visualization for AWS servers."
@@ -94,21 +104,21 @@ export default function Page() {
       {config.testimonialsEnabled && (
         <section className="section bg-collective-beige/50">
           <div className="section-inner">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
-              <p className="text-lg opacity-75 max-w-2xl mx-auto">
+            <div className="mb-16 text-center">
+              <h2 className="mb-4 text-3xl font-bold md:text-4xl">Client Testimonials</h2>
+              <p className="mx-auto max-w-2xl text-lg opacity-75">
                 What our clients say about working with us.
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <TestimonialCard 
+
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              <TestimonialCard
                 quote="The team at Good Things Collective delivered a robust and scalable solution that exceeded our expectations. Their attention to security and ethical considerations was particularly impressive."
                 author="Sarah Johnson"
                 role="CTO, TechCorp"
                 image="/uploads/testimonial-1.jpg"
               />
-              <TestimonialCard 
+              <TestimonialCard
                 quote="Working with Good Things Collective was a game-changer for our business. Their expertise in sustainable technology solutions helped us achieve our environmental goals while improving our bottom line."
                 author="Michael Chen"
                 role="CEO, GreenTech Solutions"
@@ -123,8 +133,8 @@ export default function Page() {
       <section className="section">
         <div className="section-inner">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
-            <p className="text-lg opacity-75 max-w-2xl mx-auto mb-8">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Ready to Start Your Project?</h2>
+            <p className="mx-auto mb-8 max-w-2xl text-lg opacity-75">
               Let's work together to create something amazing.
             </p>
             <Button asChild size="lg">
@@ -135,4 +145,4 @@ export default function Page() {
       </section>
     </div>
   );
-} 
+}

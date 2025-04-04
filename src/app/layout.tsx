@@ -1,33 +1,37 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Mono, Inter } from "next/font/google";
+
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+
 import ClientLayout from "../components/ClientLayout";
 
 const spaceMono = Space_Mono({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-space-mono',
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
+  display: "swap",
 });
 
 const inter = Inter({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-inter',
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"),
   title: "Good Things Collective - Secure and Ethical Digital Solutions",
-  description: "A value-driven software collective crafting secure, ethical, and privacy-focused digital solutions with expertise in agtech and traceability.",
+  description:
+    "A value-driven software collective crafting secure, ethical, and privacy-focused digital solutions with expertise in agtech and traceability.",
   authors: [{ name: "Good Things Collective" }],
   openGraph: {
     title: "Good Things Collective - Secure and Ethical Digital Solutions",
-    description: "A value-driven software collective crafting secure, ethical, and privacy-focused digital solutions with expertise in agtech and traceability.",
+    description:
+      "A value-driven software collective crafting secure, ethical, and privacy-focused digital solutions with expertise in agtech and traceability.",
     type: "website",
     images: [{ url: "/uploads/good-collective-logo-sm.png" }],
   },
@@ -43,9 +47,7 @@ export const metadata: Metadata = {
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png" },
-    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
     other: [
       { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
@@ -59,11 +61,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceMono.variable}`}>
       <body>
@@ -77,4 +75,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-} 
+}

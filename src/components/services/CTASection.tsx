@@ -1,22 +1,32 @@
 "use client";
 
 import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
-import { config } from '@/lib/config';
+import { config } from "@/lib/config";
 
 const CTASection = () => {
   return (
-    <section className="py-24 bg-collective-black text-collective-beige">
-      <div className="container max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to start your project?</h2>
-        <p className="text-lg opacity-75 max-w-2xl mx-auto mb-10">
+    <section className="bg-collective-black py-24 text-collective-beige">
+      <div className="container mx-auto max-w-6xl px-6 text-center">
+        <h2 className="mb-6 text-3xl font-bold md:text-4xl">Ready to start your project?</h2>
+        <p className="mx-auto mb-10 max-w-2xl text-lg opacity-75">
           Send us your proposal or book a 30-minute call to discuss your ideas.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="border-collective-beige bg-transparent text-collective-beige hover:bg-collective-beige/10"
+          >
             <a href={`mailto:${config.email}`}>Email us</a>
           </Button>
-          <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
+          <Button
+            asChild
+            size="lg"
+            className="bg-collective-orange text-collective-beige hover:bg-collective-orange/90"
+          >
             <Link href="/contact">Book a call</Link>
           </Button>
         </div>
@@ -25,4 +35,4 @@ const CTASection = () => {
   );
 };
 
-export default CTASection; 
+export default CTASection;

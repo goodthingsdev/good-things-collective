@@ -1,0 +1,7 @@
+.next
+build
+node_modules
+public
+next-env.d.ts
+*.config.js
+coverage 

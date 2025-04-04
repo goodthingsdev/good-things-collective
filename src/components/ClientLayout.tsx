@@ -1,9 +1,10 @@
 "use client";
 
 import { QueryClientProvider } from "@tanstack/react-query";
+
 import Layout from "@/components/Layout";
-import { queryClient } from "@/lib/query-client";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { queryClient } from "@/lib/query-client";
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -19,4 +20,4 @@ const ClientLayout = ({ children }: ClientLayoutProps) => {
   );
 };
 
-export default ClientLayout; 
+export default ClientLayout;

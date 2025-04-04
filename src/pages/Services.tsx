@@ -1,10 +1,10 @@
 "use client";
 
-import HeroSection from "@/components/services/HeroSection";
-import ServicesOverview from "@/components/services/ServicesOverview";
-import EngagementModels from "@/components/services/EngagementModels";
-import ProcessSection from "@/components/services/ProcessSection";
 import CTASection from "@/components/services/CTASection";
+import EngagementModels from "@/components/services/EngagementModels";
+import HeroSection from "@/components/services/HeroSection";
+import ProcessSection from "@/components/services/ProcessSection";
+import ServicesOverview from "@/components/services/ServicesOverview";
 
 const Services = () => {
   return (

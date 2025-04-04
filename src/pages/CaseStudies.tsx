@@ -1,29 +1,34 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { config } from '../lib/config';
+
 import CaseStudyCard from "@/components/case-studies/CaseStudyCard";
-import TestimonialCard from "@/components/case-studies/TestimonialCard";
 import FeaturedCaseStudy from "@/components/case-studies/FeaturedCaseStudy";
+import TestimonialCard from "@/components/case-studies/TestimonialCard";
+import { Button } from "@/components/ui/button";
+
+import { config } from "../lib/config";
 
 const CaseStudies = () => {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="py-12 md:py-16 bg-collective-beige/30">
-        <div className="container max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+      <section className="bg-collective-beige/30 py-12 md:py-16">
+        <div className="container mx-auto max-w-6xl px-6">
+          <div className="flex flex-col items-center justify-between md:flex-row">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-2">Our Work</h1>
-              <p className="text-lg opacity-75 max-w-xl">
-                Explore our case studies showcasing our expertise in secure and ethical digital solutions.
+              <h1 className="mb-2 text-4xl font-bold leading-tight md:text-5xl">Our Work</h1>
+              <p className="max-w-xl text-lg opacity-75">
+                Explore our case studies showcasing our expertise in secure and ethical digital
+                solutions.
               </p>
             </div>
             <div className="mt-6 md:mt-0">
               <Button asChild variant="outline">
-                <Link href="/contact">Start a project <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link href="/contact">
+                  Start a project <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
@@ -33,8 +38,8 @@ const CaseStudies = () => {
       {/* Case Studies Grid */}
       <section className="section pt-16">
         <div className="section-inner">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            <CaseStudyCard 
+          <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2">
+            <CaseStudyCard
               title="StoryBird.io: Product Storytelling Platform"
               category="Supply Chain & Consumer Engagement"
               description="A platform that enables brands to connect consumers with their product stories through transparent supply chain narratives. Consumers can access detailed product information via QR codes on packaging, store displays, or menus, creating an engaging and transparent shopping experience."
@@ -42,7 +47,7 @@ const CaseStudies = () => {
               technologies={["React", "Node.js", "QR Code API", "AWS"]}
               projectUrl="https://storybird.io/"
             />
-            <CaseStudyCard 
+            <CaseStudyCard
               title="NuMundo.org: Global Regenerative Living Network"
               category="Sustainability & Community"
               description="A platform connecting people with regenerative living projects worldwide, facilitating knowledge sharing and community building for sustainable living."
@@ -68,17 +73,23 @@ const CaseStudies = () => {
       {/* More Case Studies Grid */}
       <section className="section">
         <div className="section-inner">
-          <h2 className="text-3xl font-bold mb-12">More Case Studies</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            <CaseStudyCard 
+          <h2 className="mb-12 text-3xl font-bold">More Case Studies</h2>
+
+          <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2">
+            <CaseStudyCard
               title="Enterprise Reporting Platform with Metabase"
               category="Data Analytics & Business Intelligence"
               description="A scalable enterprise reporting solution that simplifies complex data structures through denormalization, enabling efficient business intelligence across multiple data sources."
               image="/uploads/metabase-reports.png"
-              technologies={["Metabase", "AWS Athena", "AWS DMS", "AWS Glue", "Serverless Architecture"]}
+              technologies={[
+                "Metabase",
+                "AWS Athena",
+                "AWS DMS",
+                "AWS Glue",
+                "Serverless Architecture",
+              ]}
             />
-            <CaseStudyCard 
+            <CaseStudyCard
               title="Grafana Loki Stack: Open-Source Logging Solution"
               category="DevOps & Monitoring"
               description="An open-source logging solution built on Grafana Loki, providing real-time log aggregation, analysis, and visualization for AWS servers."
@@ -94,21 +105,21 @@ const CaseStudies = () => {
       {config.testimonialsEnabled && (
         <section className="section bg-collective-beige/50">
           <div className="section-inner">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
-              <p className="text-lg opacity-75 max-w-2xl mx-auto">
+            <div className="mb-16 text-center">
+              <h2 className="mb-4 text-3xl font-bold md:text-4xl">Client Testimonials</h2>
+              <p className="mx-auto max-w-2xl text-lg opacity-75">
                 What our clients say about working with us.
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <TestimonialCard 
+
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              <TestimonialCard
                 quote="The team at GOOD! Collective delivered beyond our expectations. Their focus on security and ethical considerations set them apart from other agencies we've worked with."
                 author="Maria Rodriguez"
                 company="Foods Co."
                 image="/uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png"
               />
-              <TestimonialCard 
+              <TestimonialCard
                 quote="Their expertise in agricultural technology was invaluable. They understood our specific challenges and built a solution that transformed our supply chain visibility."
                 author="John Tetenbaum"
                 company="FarmFresh Inc."
@@ -120,17 +131,29 @@ const CaseStudies = () => {
       )}
 
       {/* CTA Section */}
-      <section className="py-24 bg-collective-black text-collective-beige">
-        <div className="container max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's build something meaningful together</h2>
-          <p className="text-lg opacity-75 max-w-2xl mx-auto mb-10">
-            We're passionate about creating technology that makes a positive impact. Reach out to discuss your project.
+      <section className="bg-collective-black py-24 text-collective-beige">
+        <div className="container mx-auto max-w-6xl px-6 text-center">
+          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+            Let's build something meaningful together
+          </h2>
+          <p className="mx-auto mb-10 max-w-2xl text-lg opacity-75">
+            We're passionate about creating technology that makes a positive impact. Reach out to
+            discuss your project.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-collective-beige bg-transparent text-collective-beige hover:bg-collective-beige/10"
+            >
               <a href={`mailto:${config.email}`}>Email us</a>
             </Button>
-            <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
+            <Button
+              asChild
+              size="lg"
+              className="bg-collective-orange text-collective-beige hover:bg-collective-orange/90"
+            >
               <Link href="/contact">Book a call</Link>
             </Button>
           </div>
