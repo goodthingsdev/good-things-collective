@@ -19,8 +19,8 @@ const CaseStudySection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <CaseStudyCard 
-            title="StoryBird.io: AI-Powered Storytelling Platform"
-            category="AI & Content Creation"
+            title="StoryBird.io: Product Storytelling Platform"
+            category="Supply Chain & Consumer Engagement"
             image="/uploads/SCR-20250404-koot.png"
           />
           <CaseStudyCard 

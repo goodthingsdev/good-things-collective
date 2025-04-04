@@ -1,6 +1,6 @@
-
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface CaseStudyCardProps {
   title: string;
@@ -10,7 +10,11 @@ interface CaseStudyCardProps {
 
 const CaseStudyCard = ({ title, category, image }: CaseStudyCardProps) => {
   return (
-    <div className="group cursor-pointer">
+    <Link 
+      to="/case-studies" 
+      className="block group"
+      onClick={() => window.scrollTo(0, 0)}
+    >
       <div className="overflow-hidden rounded-lg mb-4">
         <img 
           src={image} 
@@ -26,7 +30,7 @@ const CaseStudyCard = ({ title, category, image }: CaseStudyCardProps) => {
           <ArrowRight className="ml-2 h-4 w-4" />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
