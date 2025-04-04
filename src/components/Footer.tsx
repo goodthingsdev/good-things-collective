@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, Leaf, Lock, Globe, Github, MessagesSquare } from "lucide-react";
+import { config } from '../lib/config';
 
 const Footer = () => {
   return (
@@ -35,10 +36,10 @@ const Footer = () => {
               Ready to start your next project? Send us your proposal or book a call!
             </p>
             <a 
-              href="mailto:collective@goodthings.dev" 
+              href={`mailto:${config.email}`} 
               className="flex items-center text-collective-orange hover:underline"
             >
-              collective@goodthings.dev
+              {config.email}
             </a>
           </div>
         </div>

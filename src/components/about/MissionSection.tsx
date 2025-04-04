@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Lock, Code, GitMerge } from 'lucide-react';
 
@@ -45,7 +44,7 @@ const MissionSection: React.FC = () => {
           <div className="order-first md:order-last">
             <img 
               src="/lovable-uploads/ec966130-b689-4bd5-8c0b-d12d318807fb.jpg" 
-              alt="Sustainable technology illustration with security, code, and nature icons" 
+              alt="Technology illustration with security, code, and nature icons" 
               className="rounded-lg w-full max-w-md mx-auto"
             />
           </div>

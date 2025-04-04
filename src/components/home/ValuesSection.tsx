@@ -1,4 +1,3 @@
-
 import { Shield, Code, Leaf } from "lucide-react";
 import ValueCard from "./ValueCard";
 
@@ -27,7 +26,7 @@ const ValuesSection = () => {
           <ValueCard 
             icon={<Leaf className="w-6 h-6 text-collective-orange" />}
             title="Planet Positive"
-            description="We're committed to creating technology that contributes to a more sustainable future."
+            description="We're committed to creating technology that contributes to a better future."
           />
         </div>
       </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Code, GitMerge, Server, Shield, LineChart, Smartphone, Globe, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { config } from '../lib/config';
 
 const Services = () => {
   return (
@@ -33,7 +34,7 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Expertise</h2>
             <p className="text-lg opacity-75 max-w-2xl mx-auto">
-              We specialize in modern technology stacks and sustainable solutions.
+              We specialize in modern technology stacks and ethical solutions.
             </p>
           </div>
           
@@ -46,7 +47,7 @@ const Services = () => {
             <ServiceCard 
               icon={<GitMerge className="w-6 h-6 text-collective-orange" />}
               title="Open-source Frameworks"
-              description="Leveraging and contributing to open-source technology for better, more sustainable solutions."
+              description="Leveraging and contributing to open-source technology for better solutions."
             />
             <ServiceCard 
               icon={<Shield className="w-6 h-6 text-collective-orange" />}
@@ -181,7 +182,7 @@ const Services = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
-              <a href="mailto:collective@goodthings.dev">Email us</a>
+              <a href={`mailto:${config.email}`}>Email us</a>
             </Button>
             <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
               <Link to="/contact">Book a call</Link>

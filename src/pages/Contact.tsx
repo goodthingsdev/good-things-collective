@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { config } from '../lib/config';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -56,7 +57,7 @@ const Contact = () => {
             </div>
             <div className="mt-6 md:mt-0">
               <Button asChild variant="outline">
-                <a href="mailto:collective@goodthings.dev">Email us <ArrowRight className="ml-2 h-4 w-4" /></a>
+                <a href={`mailto:${config.email}`}>Email us <ArrowRight className="ml-2 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -156,8 +157,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-bold">Email</h3>
                       <p className="text-collective-orange hover:underline">
-                        <a href="mailto:collective@goodthings.dev">
-                          collective@goodthings.dev
+                        <a href={`mailto:${config.email}`}>
+                          {config.email}
                         </a>
                       </p>
                     </div>

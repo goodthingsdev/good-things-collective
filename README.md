@@ -7,7 +7,7 @@ Micro site w/ case studies for remote-first engineering collective Good Things C
 Good Things Collective is a team of experienced engineers specializing in:
 - Security-first development
 - Ethical technology implementation
-- Sustainable software solutions
+- Secure and ethical software solutions
 - Open-source contributions
 - Commercial project delivery
 

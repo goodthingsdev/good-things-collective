@@ -1,8 +1,8 @@
-
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
+import { config } from '../lib/config';
 
 const CaseStudies = () => {
   return (
@@ -14,7 +14,7 @@ const CaseStudies = () => {
             <div>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-2">Our Work</h1>
               <p className="text-lg opacity-75 max-w-xl">
-                Explore our case studies showcasing our expertise in secure, ethical, and sustainable digital solutions.
+                Explore our case studies showcasing our expertise in secure and ethical digital solutions.
               </p>
             </div>
             <div className="mt-6 md:mt-0">
@@ -144,7 +144,7 @@ const CaseStudies = () => {
             <TestimonialCard 
               quote="The team at GOOD! Collective delivered beyond our expectations. Their focus on security and ethical considerations set them apart from other agencies we've worked with."
               author="Maria Rodriguez"
-              company="Sustainable Foods Co."
+              company="Foods Co."
               image="/lovable-uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png"
             />
             <TestimonialCard 
@@ -166,7 +166,7 @@ const CaseStudies = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
-              <a href="mailto:collective@goodthings.dev">Email us</a>
+              <a href={`mailto:${config.email}`}>Email us</a>
             </Button>
             <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
               <Link to="/contact">Book a call</Link>

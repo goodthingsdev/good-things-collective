@@ -1,6 +1,6 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { config } from '../../lib/config';
 
 const CTASection = () => {
   return (
@@ -12,7 +12,7 @@ const CTASection = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button asChild size="lg" variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
-            <a href="mailto:collective@goodthings.dev">Email us</a>
+            <a href={`mailto:${config.email}`}>Email us</a>
           </Button>
           <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
             <Link to="/contact">Book a call</Link>

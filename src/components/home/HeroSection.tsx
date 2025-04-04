@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -28,7 +27,7 @@ const HeroSection = () => {
               <span className="block">digital solutions</span>
             </h1>
             <p className="text-lg text-collective-black/90 max-w-md drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-              We're a remote-first team of engineers passionate about creating sustainable, planet-positive technology.
+              We're a remote-first team of engineers passionate about creating planet-positive technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-black shadow-[0_0_15px_rgba(255,255,255,0.5)]">
