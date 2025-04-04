@@ -1,6 +1,7 @@
+"use client";
 
-import React from 'react';
-import { Github, Linkedin } from 'lucide-react';
+import React from "react";
+import { Github, Linkedin } from "lucide-react";
 
 interface TeamMemberProps {
   name: string;
@@ -13,7 +14,7 @@ interface TeamMemberProps {
   github?: string;
 }
 
-const TeamMember: React.FC<TeamMemberProps> = ({ 
+const TeamMember = ({ 
   name, 
   role, 
   location, 
@@ -22,16 +23,16 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   square = false,
   linkedin,
   github
-}) => {
+}: TeamMemberProps) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div className="relative aspect-square">
-        <div className="absolute top-0 right-0 bg-collective-black text-collective-beige px-2 py-1 text-xs z-10">
+        <div className="absolute top-0 right-0 bg-black text-white px-2 py-1 text-xs z-10">
           {location}
         </div>
         {placeholder ? (
-          <div className="w-full h-full bg-[#CCCCCC] flex items-center justify-center">
-            <span className="text-gray-500 font-medium">{name.charAt(0)}</span>
+          <div className="w-full h-full bg-collective.gray/20 flex items-center justify-center">
+            <span className="text-collective.gray font-medium">{name.charAt(0)}</span>
           </div>
         ) : (
           <img 
@@ -49,12 +50,12 @@ const TeamMember: React.FC<TeamMemberProps> = ({
             <div className="flex gap-2">
               {linkedin && (
                 <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${name}'s LinkedIn profile`}>
-                  <Linkedin size={16} className="text-gray-600 hover:text-collective-orange transition-colors" />
+                  <Linkedin size={16} className="text-collective.gray hover:text-collective.orange transition-colors" />
                 </a>
               )}
               {github && (
                 <a href={github} target="_blank" rel="noopener noreferrer" aria-label={`${name}'s GitHub profile`}>
-                  <Github size={16} className="text-gray-600 hover:text-collective-orange transition-colors" />
+                  <Github size={16} className="text-collective.gray hover:text-collective.orange transition-colors" />
                 </a>
               )}
             </div>

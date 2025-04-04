@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -31,10 +33,10 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-black shadow-[0_0_15px_rgba(255,255,255,0.5)]">
-                <Link to="/contact">Get in touch</Link>
+                <Link href="/contact">Get in touch</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="bg-transparent border-collective-black text-collective-black hover:bg-collective-black/10 shadow-[0_0_15px_rgba(255,255,255,0.5)]">
-                <Link to="/case-studies">View our work</Link>
+                <Link href="/case-studies">View our work</Link>
               </Button>
             </div>
           </div>

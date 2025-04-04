@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { ChevronRight, Leaf, Lock, Globe, Github, MessagesSquare } from "lucide-react";
 import { config } from '../lib/config';
 
@@ -22,11 +24,11 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <FooterLink to="/">Home</FooterLink>
-              <FooterLink to="/about">About Us</FooterLink>
-              <FooterLink to="/services">Services</FooterLink>
-              <FooterLink to="/case-studies">Case Studies</FooterLink>
-              <FooterLink to="/contact">Contact</FooterLink>
+              <FooterLink href="/">Home</FooterLink>
+              <FooterLink href="/about">About Us</FooterLink>
+              <FooterLink href="/services">Services</FooterLink>
+              <FooterLink href="/case-studies">Case Studies</FooterLink>
+              <FooterLink href="/contact">Contact</FooterLink>
             </ul>
           </div>
           
@@ -53,10 +55,10 @@ const Footer = () => {
   );
 };
 
-const FooterLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
+const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <li>
     <Link 
-      to={to} 
+      href={href} 
       className="text-sm opacity-80 hover:opacity-100 transition-opacity flex items-center group"
     >
       <ChevronRight size={14} className="mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />

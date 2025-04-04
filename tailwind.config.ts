@@ -1,15 +1,12 @@
-
 import type { Config } from "tailwindcss";
 
-export default {
-	darkMode: ["class"],
+const config: Config = {
+	darkMode: "class",
 	content: [
-		"./pages/**/*.{ts,tsx}",
-		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
+		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
-	prefix: "",
 	theme: {
 		container: {
 			center: true,
@@ -20,10 +17,16 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				mono: ['Space Mono', 'monospace'],
-				sans: ['Inter', 'sans-serif']
+				mono: ['var(--font-space-mono)', 'monospace'],
+				sans: ['var(--font-inter)', 'system-ui', 'sans-serif']
 			},
 			colors: {
+				collective: {
+					black: '#000000',
+					white: '#FFFFFF',
+					beige: '#e8e3d7',
+					orange: '#FF5C35',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -67,12 +70,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				collective: {
-					black: '#000000',
-					white: '#FFFFFF',
-					beige: '#e8e3d7',
-					orange: '#FF5C35',
-				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -136,5 +133,7 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
+
+export default config;

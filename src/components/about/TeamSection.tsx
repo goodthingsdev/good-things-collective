@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import TeamMember from './TeamMember';
 
@@ -71,7 +73,7 @@ const teamMembers = [
   }
 ];
 
-const TeamSection: React.FC = () => {
+const TeamSection = () => {
   return (
     <section className="section py-16 md:py-24">
       <div className="section-inner">

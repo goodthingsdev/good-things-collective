@@ -1,6 +1,8 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { config } from '../lib/config';
 import CaseStudyCard from "@/components/case-studies/CaseStudyCard";
 import TestimonialCard from "@/components/case-studies/TestimonialCard";
@@ -21,7 +23,7 @@ const CaseStudies = () => {
             </div>
             <div className="mt-6 md:mt-0">
               <Button asChild variant="outline">
-                <Link to="/contact">Start a project <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link href="/contact">Start a project <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </div>
           </div>
@@ -129,7 +131,7 @@ const CaseStudies = () => {
               <a href={`mailto:${config.email}`}>Email us</a>
             </Button>
             <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
-              <Link to="/contact">Book a call</Link>
+              <Link href="/contact">Book a call</Link>
             </Button>
           </div>
         </div>

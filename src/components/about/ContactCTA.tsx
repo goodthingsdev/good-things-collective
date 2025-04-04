@@ -1,7 +1,9 @@
+"use client";
+
 import React from 'react';
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { config } from '../../lib/config';
+import { config } from '@/lib/config';
 
 const ContactCTA: React.FC = () => {
   return (
@@ -16,7 +18,7 @@ const ContactCTA: React.FC = () => {
             <a href={`mailto:${config.email}`}>Email us</a>
           </Button>
           <Button asChild size="lg" className="bg-collective-orange hover:bg-collective-orange/90 text-collective-beige">
-            <Link to="/contact">Book a call</Link>
+            <Link href="/contact">Book a call</Link>
           </Button>
         </div>
       </div>

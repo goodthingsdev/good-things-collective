@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Send, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -5,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { config } from '../lib/config';
 
 const Contact = () => {

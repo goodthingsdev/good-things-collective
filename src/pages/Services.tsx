@@ -1,3 +1,5 @@
+"use client";
+
 import HeroSection from "@/components/services/HeroSection";
 import ServicesOverview from "@/components/services/ServicesOverview";
 import EngagementModels from "@/components/services/EngagementModels";

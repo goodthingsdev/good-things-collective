@@ -1,11 +1,15 @@
+"use client";
 
 import { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { Loader } from 'lucide-react';
 
-const Layout = () => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -32,7 +36,7 @@ const Layout = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        <Outlet />
+        {children}
       </main>
       <Footer />
     </div>
