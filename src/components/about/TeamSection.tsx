@@ -53,6 +53,14 @@ const teamMembers = [
     github: "https://github.com/luisgchain"
   },
   {
+    name: "Erika Logie",
+    role: "UI/UX Designer",
+    location: "USA",
+    image: "/uploads/7c11e801-4d16-46a6-9c72-81c4fa9b3386.png",
+    square: true,
+    linkedin: "https://www.linkedin.com/in/erika-logie-3a15647/"
+  },
+  {
     name: "Franz Gatzke",
     role: "Senior Software Engineer",
     location: "GER",
@@ -60,14 +68,6 @@ const teamMembers = [
     square: true,
     linkedin: "https://www.linkedin.com/in/franz-gatzke/",
     github: "https://github.com/justTB"
-  },
-  {
-    name: "Erika Logie",
-    role: "UI/UX Designer",
-    location: "USA",
-    image: "/uploads/7c11e801-4d16-46a6-9c72-81c4fa9b3386.png",
-    square: true,
-    linkedin: "https://www.linkedin.com/in/erika-logie-3a15647/"
   }
 ];
 
