@@ -183,7 +183,7 @@ const Contact = () => {
                 <p className="opacity-75 mb-6">
                   Schedule a 30-minute call with our team to discuss your project in detail.
                 </p>
-                <Button variant="outline" className="w-full border-collective-beige text-collective-beige hover:bg-collective-beige/10">
+                <Button variant="outline" className="w-full border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
                   Schedule Now <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
