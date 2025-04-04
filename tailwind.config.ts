@@ -21,8 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				mono: ['Space Mono', 'monospace'],
-				sans: ['Inter', 'sans-serif'],
-				oswald: ['Oswald', 'Impact', 'sans-serif'],
+				sans: ['Inter', 'sans-serif']
 			},
 			colors: {
 				border: 'hsl(var(--border))',

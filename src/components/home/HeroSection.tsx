@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0 opacity-20">
         <img 
-          src="/lovable-uploads/3f0413f6-31be-4eb3-bf38-e53d02dc0532.png" 
+          src="/lovable-uploads/3f0413f6-31be-4eb3-bf38-e53d02dc0532.jpg" 
           alt="Abstract Technological Pattern" 
           className="w-full h-full object-cover object-center"
         />
@@ -20,7 +20,7 @@ const HeroSection = () => {
           <div className="space-y-6 animate-fade-in">
             <div className="inline-block mb-4">
               <div className="px-4 py-1 rounded-full bg-collective-black/10 border border-collective-black/20 text-sm text-collective-black shadow-[0_0_15px_rgba(255,255,255,0.5)]">
-                <span className="logo-text">GOOD! Collective</span>
+                Code Collective
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-collective-black drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
