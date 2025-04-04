@@ -21,12 +21,12 @@ const CaseStudySection = () => {
           <CaseStudyCard 
             title="StoryBird.io: AI-Powered Storytelling Platform"
             category="AI & Content Creation"
-            image="/lovable-uploads/SCR-20250404-koot.png"
+            image="/uploads/SCR-20250404-koot.png"
           />
           <CaseStudyCard 
             title="NuMundo.org: Global Regenerative Living Network"
             category="Sustainability & Community"
-            image="/lovable-uploads/SCR-20250404-kprt.png"
+            image="/uploads/SCR-20250404-kprt.png"
           />
         </div>
       </div>

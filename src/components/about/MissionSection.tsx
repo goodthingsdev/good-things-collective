@@ -43,7 +43,7 @@ const MissionSection: React.FC = () => {
           </div>
           <div className="order-first md:order-last">
             <img 
-              src="/lovable-uploads/ec966130-b689-4bd5-8c0b-d12d318807fb.jpg" 
+              src="/uploads/ec966130-b689-4bd5-8c0b-d12d318807fb.jpg" 
               alt="Technology illustration with security, code, and nature icons" 
               className="rounded-lg w-full max-w-md mx-auto"
             />

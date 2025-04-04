@@ -36,7 +36,7 @@ const CaseStudies = () => {
               title="StoryBird.io: Product Storytelling Platform"
               category="Supply Chain & Consumer Engagement"
               description="A platform that enables brands to connect consumers with their product stories through transparent supply chain narratives. Consumers can access detailed product information via QR codes on packaging, store displays, or menus, creating an engaging and transparent shopping experience."
-              image="/lovable-uploads/SCR-20250404-koot.png"
+              image="/uploads/SCR-20250404-koot.png"
               technologies={["React", "Node.js", "QR Code API", "AWS"]}
               projectUrl="https://storybird.io/"
             />
@@ -44,7 +44,7 @@ const CaseStudies = () => {
               title="NuMundo.org: Global Regenerative Living Network"
               category="Sustainability & Community"
               description="A platform connecting people with regenerative living projects worldwide, facilitating knowledge sharing and community building for sustainable living."
-              image="/lovable-uploads/SCR-20250404-kprt.png"
+              image="/uploads/SCR-20250404-kprt.png"
               technologies={["React", "Node.js", "PostgreSQL", "Mapbox", "Stripe"]}
               projectUrl="https://numundo.org/"
             />
@@ -59,7 +59,7 @@ const CaseStudies = () => {
         challenge="Building a scalable platform to connect buyers with producers across 100+ countries while ensuring supply chain transparency and sustainability tracking."
         solution="Developed a B2B marketplace connecting buyers directly to source, featuring a 4M+ farmer ecosystem with sustainability tracking and supply chain traceability."
         results="Established a global network of farmers and producers across 100+ countries, enabling direct B2B connections with full sustainability and supply chain visibility."
-        image="/lovable-uploads/SCR-20250404-kqsg.png"
+        image="/uploads/SCR-20250404-kqsg.png"
         projectUrl="https://producersmarket.com/"
       />
 
@@ -73,14 +73,14 @@ const CaseStudies = () => {
               title="Enterprise Reporting Platform with Metabase"
               category="Data Analytics & Business Intelligence"
               description="A scalable enterprise reporting solution that simplifies complex data structures through denormalization, enabling efficient business intelligence across multiple data sources."
-              image="/lovable-uploads/metabase-reports.png"
+              image="/uploads/metabase-reports.png"
               technologies={["Metabase", "AWS Athena", "AWS DMS", "AWS Glue", "Serverless Architecture"]}
             />
             <CaseStudyCard 
               title="Grafana Loki Stack: Open-Source Logging Solution"
               category="DevOps & Monitoring"
               description="An open-source logging solution built on Grafana Loki, providing real-time log aggregation, analysis, and visualization for AWS servers."
-              image="/lovable-uploads/SCR-20250404-kttc.png"
+              image="/uploads/SCR-20250404-kttc.png"
               technologies={["Grafana", "Loki", "Prometheus", "Node Exporter", "AWS"]}
               projectUrl="https://github.com/lukesmmr/grafana-loki-stack"
             />
@@ -104,13 +104,13 @@ const CaseStudies = () => {
                 quote="The team at GOOD! Collective delivered beyond our expectations. Their focus on security and ethical considerations set them apart from other agencies we've worked with."
                 author="Maria Rodriguez"
                 company="Foods Co."
-                image="/lovable-uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png"
+                image="/uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png"
               />
               <TestimonialCard 
                 quote="Their expertise in agricultural technology was invaluable. They understood our specific challenges and built a solution that transformed our supply chain visibility."
                 author="John Tetenbaum"
                 company="FarmFresh Inc."
-                image="/lovable-uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png"
+                image="/uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png"
               />
             </div>
           </div>

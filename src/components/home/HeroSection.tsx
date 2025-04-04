@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0 opacity-10">
         <img 
-          src="/lovable-uploads/3f0413f6-31be-4eb3-bf38-e53d02dc0532.jpg" 
+          src="/uploads/3f0413f6-31be-4eb3-bf38-e53d02dc0532.jpg" 
           alt="Abstract Technological Pattern" 
           className="w-full h-full object-cover object-center"
         />

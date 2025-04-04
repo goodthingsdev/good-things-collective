@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -45,7 +44,7 @@ const Navbar = () => {
           >
             <div className="h-16 w-auto overflow-hidden">
               <img 
-                src="/lovable-uploads/dd0c2c65-b548-46ec-9c08-392bf73a05c4.png" 
+                src="/uploads/dd0c2c65-b548-46ec-9c08-392bf73a05c4.png" 
                 alt="GOOD! Logo" 
                 className="h-full w-auto object-contain"
               />

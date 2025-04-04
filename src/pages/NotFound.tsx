@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
@@ -21,7 +20,7 @@ const NotFound = () => {
         <h1 className="text-7xl md:text-9xl font-bold mb-4">404</h1>
         <div className="mb-8">
           <img 
-            src="/lovable-uploads/762fefac-5d79-4490-9917-579f60d97be4.png" 
+            src="/uploads/762fefac-5d79-4490-9917-579f60d97be4.png" 
             alt="Page not found" 
             className="w-64 mx-auto"
           />
