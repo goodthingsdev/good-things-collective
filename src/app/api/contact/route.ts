@@ -7,6 +7,8 @@ import { RateLimiter } from "@/lib/rate-limit";
 import { resend, contactEmail, senderEmail } from "@/lib/resend";
 import { contactFormSchema } from "@/lib/validations/contact";
 
+const debug = process.env.NODE_ENV === "development";
+
 // Create rate limiter: 5 requests per hour
 const rateLimiter = new RateLimiter(5, 60 * 60 * 1000);
 
@@ -19,13 +21,13 @@ export async function POST(request: Request) {
     const forwardedFor = headersList.get("x-forwarded-for");
     const ip = forwardedFor ? forwardedFor.split(",")[0] : "unknown";
 
-    console.log(`[${requestId}] Processing contact form submission from IP: ${ip}`);
+    debug && console.log(`[${requestId}] Processing contact form submission from IP: ${ip}`);
 
     // Check rate limit
     const rateLimit = rateLimiter.check(ip);
 
     if (!rateLimit.success) {
-      console.log(
+      debug && console.log(
         `[${requestId}] Rate limit exceeded for IP: ${ip}. Next reset at: ${rateLimit.resetTime}`
       );
       return NextResponse.json(
@@ -39,19 +41,19 @@ export async function POST(request: Request) {
       );
     }
 
-    console.log(
+    debug && console.log(
       `[${requestId}] Rate limit check passed. Remaining attempts: ${rateLimit.remainingAttempts}`
     );
 
     const data = await request.json();
 
     // Validate the request data
-    console.log(`[${requestId}] Validating form data...`);
+    debug && console.log(`[${requestId}] Validating form data...`);
     const validatedData = contactFormSchema.parse(data);
-    console.log(`[${requestId}] Form data validation successful`);
+    debug && console.log(`[${requestId}] Form data validation successful`);
 
     // Debug logging
-    console.log(`[${requestId}] Contact form submission details:`, {
+    debug && console.log(`[${requestId}] Contact form submission details:`, {
       timestamp: new Date().toISOString(),
       name: validatedData.name,
       email: validatedData.email,
@@ -64,8 +66,8 @@ export async function POST(request: Request) {
     // Send email
     const { name, email, company, message } = validatedData;
 
-    console.log(`[${requestId}] Preparing to send email via Resend...`);
-    console.log(`[${requestId}] Email configuration:`, {
+    debug && console.log(`[${requestId}] Preparing to send email via Resend...`);
+    debug && console.log(`[${requestId}] Email configuration:`, {
       from: `${name} via Good Things Collective <${senderEmail}>`,
       replyTo: email,
       to: contactEmail,
@@ -87,7 +89,7 @@ export async function POST(request: Request) {
         }),
       });
 
-      console.log(`[${requestId}] Email sent successfully:`, {
+      debug && console.log(`[${requestId}] Email sent successfully:`, {
         emailId: emailResult?.id,
         timestamp: new Date().toISOString(),
       });
@@ -106,7 +108,7 @@ export async function POST(request: Request) {
 
     // Handle validation errors
     if (error instanceof ZodError) {
-      console.log(`[${requestId}] Validation errors:`, {
+      debug && console.log(`[${requestId}] Validation errors:`, {
         errors: error.errors.map((err) => ({
           field: err.path.join("."),
           message: err.message,
