@@ -43,14 +43,13 @@ const Navbar = () => {
             to="/" 
             className="flex items-center gap-2 hover:opacity-90 transition-opacity"
           >
-            <div className="h-10 w-auto overflow-hidden">
+            <div className="h-16 w-auto overflow-hidden">
               <img 
                 src="/lovable-uploads/dd0c2c65-b548-46ec-9c08-392bf73a05c4.png" 
                 alt="GOOD! Logo" 
                 className="h-full w-auto object-contain"
               />
             </div>
-            <span className="logo-text text-2xl text-collective-black">Collective</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -116,3 +115,4 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
 };
 
 export default Navbar;
+
