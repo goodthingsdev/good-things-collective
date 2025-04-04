@@ -45,11 +45,8 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-collective-beige/20 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-xs opacity-60">© {new Date().getFullYear()} GOOD! Collective. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <span className="text-xs opacity-60 hover:opacity-100 transition-opacity cursor-pointer">Privacy Policy</span>
-            <span className="text-xs opacity-60 hover:opacity-100 transition-opacity cursor-pointer">Terms of Service</span>
-          </div>
+          <p className="text-xs opacity-60">© {new Date().getFullYear()} GOOD! Collective.</p>
+          <p className="text-xs opacity-60">All rights reserved.</p>
         </div>
       </div>
     </footer>
