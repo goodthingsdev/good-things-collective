@@ -8,7 +8,7 @@ const teamMembers = [
     location: "PRT",
     image: "/uploads/984d8341-b5f2-4536-8715-b1323031b223.png",
     square: true,
-    linkedin: "https://linkedin.com/in/lukas-sommer",
+    linkedin: "https://www.linkedin.com/in/lukas-sommer-32635a100/",
     github: "https://github.com/lukesmmr"
   },
   {
