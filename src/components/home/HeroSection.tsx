@@ -20,7 +20,7 @@ const HeroSection = () => {
           <div className="space-y-6 animate-fade-in">
             <div className="inline-block mb-4">
               <div className="px-4 py-1 rounded-full bg-collective-black/10 border border-collective-black/20 text-sm text-collective-black shadow-[0_0_15px_rgba(255,255,255,0.5)]">
-                Code Collective
+                <span className="logo-text">GOOD! Collective</span>
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-collective-black drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">

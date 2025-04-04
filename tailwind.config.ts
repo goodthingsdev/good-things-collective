@@ -22,6 +22,7 @@ export default {
 			fontFamily: {
 				mono: ['Space Mono', 'monospace'],
 				sans: ['Inter', 'sans-serif'],
+				oswald: ['Oswald', 'Impact', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

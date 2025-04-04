@@ -41,9 +41,16 @@ const Navbar = () => {
         <nav className="flex items-center justify-between">
           <Link 
             to="/" 
-            className="text-2xl font-bold tracking-tight hover:text-collective-orange transition-colors"
+            className="flex items-center gap-2 hover:opacity-90 transition-opacity"
           >
-            GOOD!
+            <div className="h-10 w-auto overflow-hidden">
+              <img 
+                src="/lovable-uploads/dd0c2c65-b548-46ec-9c08-392bf73a05c4.png" 
+                alt="GOOD! Logo" 
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            <span className="logo-text text-2xl text-collective-black">Collective</span>
           </Link>
 
           {/* Desktop Navigation */}
