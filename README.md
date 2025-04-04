@@ -46,11 +46,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Environment Variables
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `RESEND_API_KEY` | Your Resend API key | Yes |
-| `CONTACT_EMAIL` | Email address where contact form submissions will be sent | Yes |
-| `SENDER_EMAIL` | Verified email address that will be used to send emails | Yes |
+| Variable         | Description                                               | Required |
+| ---------------- | --------------------------------------------------------- | -------- |
+| `RESEND_API_KEY` | Your Resend API key                                       | Yes      |
+| `CONTACT_EMAIL`  | Email address where contact form submissions will be sent | Yes      |
+| `SENDER_EMAIL`   | Verified email address that will be used to send emails   | Yes      |
 
 ## Learn More
 

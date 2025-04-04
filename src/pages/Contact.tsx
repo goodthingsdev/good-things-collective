@@ -2,7 +2,6 @@
 
 import { Send, Mail, MapPin, ArrowRight } from "lucide-react";
 import { useState } from "react";
-import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
 import { ZodError } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -10,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
 
 import { config } from "../lib/config";
 
@@ -27,24 +27,24 @@ const Contact = () => {
   const validateField = (name: keyof ContactFormData, value: string) => {
     try {
       contactFormSchema.shape[name].parse(value);
-      setErrors(prev => ({ ...prev, [name]: undefined }));
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
       return true;
     } catch (error) {
       if (error instanceof ZodError) {
-        const errorMessage = error.errors[0]?.message || 'Invalid input';
-        setErrors(prev => ({ ...prev, [name]: errorMessage }));
+        const errorMessage = error.errors[0]?.message || "Invalid input";
+        setErrors((prev) => ({ ...prev, [name]: errorMessage }));
       }
       return false;
     }
   };
 
   const hasErrors = () => {
-    return Object.values(errors).some(error => error !== undefined);
+    return Object.values(errors).some((error) => error !== undefined);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     validateField(name as keyof ContactFormData, value);
   };
 
@@ -56,10 +56,10 @@ const Contact = () => {
       // Validate all fields before submission
       const validatedData = contactFormSchema.parse(formData);
 
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(validatedData),
       });
@@ -69,7 +69,7 @@ const Contact = () => {
       if (response.status === 429) {
         const resetTime = new Date(data.remainingTime);
         const timeUntilReset = Math.ceil((resetTime.getTime() - Date.now()) / (1000 * 60));
-        
+
         toast({
           title: "Rate Limit Exceeded",
           description: `You've reached the maximum number of messages. Please try again in ${timeUntilReset} minutes.`,
@@ -81,9 +81,10 @@ const Contact = () => {
       if (data.success) {
         toast({
           title: "Message sent!",
-          description: data.remainingAttempts > 0 
-            ? `We'll get back to you as soon as possible. You have ${data.remainingAttempts} messages remaining.`
-            : "We'll get back to you as soon as possible.",
+          description:
+            data.remainingAttempts > 0
+              ? `We'll get back to you as soon as possible. You have ${data.remainingAttempts} messages remaining.`
+              : "We'll get back to you as soon as possible.",
         });
         setFormData({
           name: "",
@@ -100,7 +101,7 @@ const Contact = () => {
           });
           setErrors(newErrors);
         }
-        throw new Error(data.message || 'Failed to send message');
+        throw new Error(data.message || "Failed to send message");
       }
     } catch (error) {
       if (error instanceof Error) {
@@ -160,9 +161,7 @@ const Contact = () => {
                     required
                     className={errors.name ? "border-red-500" : ""}
                   />
-                  {errors.name && (
-                    <p className="text-sm text-red-500">{errors.name}</p>
-                  )}
+                  {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
                 </div>
 
                 <div className="space-y-2">
@@ -177,9 +176,7 @@ const Contact = () => {
                     required
                     className={errors.email ? "border-red-500" : ""}
                   />
-                  {errors.email && (
-                    <p className="text-sm text-red-500">{errors.email}</p>
-                  )}
+                  {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
                 </div>
 
                 <div className="space-y-2">
@@ -192,9 +189,7 @@ const Contact = () => {
                     placeholder="Your company"
                     className={errors.company ? "border-red-500" : ""}
                   />
-                  {errors.company && (
-                    <p className="text-sm text-red-500">{errors.company}</p>
-                  )}
+                  {errors.company && <p className="text-sm text-red-500">{errors.company}</p>}
                 </div>
 
                 <div className="space-y-2">
@@ -209,16 +204,10 @@ const Contact = () => {
                     required
                     className={errors.message ? "border-red-500" : ""}
                   />
-                  {errors.message && (
-                    <p className="text-sm text-red-500">{errors.message}</p>
-                  )}
+                  {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
                 </div>
 
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting || hasErrors()} 
-                  className="w-full"
-                >
+                <Button type="submit" disabled={isSubmitting || hasErrors()} className="w-full">
                   {isSubmitting ? (
                     <span className="flex items-center">
                       <svg

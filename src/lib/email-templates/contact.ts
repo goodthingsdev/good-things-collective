@@ -54,9 +54,9 @@ export function createContactEmailHtml({
         <div class="content">
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
-          ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
+          ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
           <h3>Message:</h3>
-          <p>${message.replace(/\n/g, '<br>')}</p>
+          <p>${message.replace(/\n/g, "<br>")}</p>
         </div>
         <div class="footer">
           <p>Sent from contact form (IP: ${ip})</p>
@@ -64,4 +64,4 @@ export function createContactEmailHtml({
       </body>
     </html>
   `.trim();
-} 
+}
