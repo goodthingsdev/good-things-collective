@@ -2,6 +2,8 @@
 
 import { Send, Mail, MapPin, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
+import { ZodError } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,37 +15,104 @@ import { config } from "../lib/config";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     company: "",
     message: "",
   });
+  const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateField = (name: keyof ContactFormData, value: string) => {
+    try {
+      contactFormSchema.shape[name].parse(value);
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+      return true;
+    } catch (error) {
+      if (error instanceof ZodError) {
+        const errorMessage = error.errors[0]?.message || 'Invalid input';
+        setErrors(prev => ({ ...prev, [name]: errorMessage }));
+      }
+      return false;
+    }
+  };
+
+  const hasErrors = () => {
+    return Object.values(errors).some(error => error !== undefined);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData(prev => ({ ...prev, [name]: value }));
+    validateField(name as keyof ContactFormData, value);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
+    try {
+      // Validate all fields before submission
+      const validatedData = contactFormSchema.parse(formData);
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(validatedData),
       });
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        message: "",
-      });
+
+      const data = await response.json();
+
+      if (response.status === 429) {
+        const resetTime = new Date(data.remainingTime);
+        const timeUntilReset = Math.ceil((resetTime.getTime() - Date.now()) / (1000 * 60));
+        
+        toast({
+          title: "Rate Limit Exceeded",
+          description: `You've reached the maximum number of messages. Please try again in ${timeUntilReset} minutes.`,
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (data.success) {
+        toast({
+          title: "Message sent!",
+          description: data.remainingAttempts > 0 
+            ? `We'll get back to you as soon as possible. You have ${data.remainingAttempts} messages remaining.`
+            : "We'll get back to you as soon as possible.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          message: "",
+        });
+        setErrors({});
+      } else {
+        if (data.errors) {
+          const newErrors: Partial<Record<keyof ContactFormData, string>> = {};
+          data.errors.forEach((err: { field: keyof ContactFormData; message: string }) => {
+            newErrors[err.field] = err.message;
+          });
+          setErrors(newErrors);
+        }
+        throw new Error(data.message || 'Failed to send message');
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        toast({
+          title: "Error",
+          description: error.message || "Failed to send message. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -89,7 +158,11 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Your name"
                     required
+                    className={errors.name ? "border-red-500" : ""}
                   />
+                  {errors.name && (
+                    <p className="text-sm text-red-500">{errors.name}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -102,7 +175,11 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="your.email@example.com"
                     required
+                    className={errors.email ? "border-red-500" : ""}
                   />
+                  {errors.email && (
+                    <p className="text-sm text-red-500">{errors.email}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -113,7 +190,11 @@ const Contact = () => {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Your company"
+                    className={errors.company ? "border-red-500" : ""}
                   />
+                  {errors.company && (
+                    <p className="text-sm text-red-500">{errors.company}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -126,10 +207,18 @@ const Contact = () => {
                     placeholder="Tell us about your project..."
                     rows={5}
                     required
+                    className={errors.message ? "border-red-500" : ""}
                   />
+                  {errors.message && (
+                    <p className="text-sm text-red-500">{errors.message}</p>
+                  )}
                 </div>
 
-                <Button type="submit" disabled={isSubmitting} className="w-full">
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting || hasErrors()} 
+                  className="w-full"
+                >
                   {isSubmitting ? (
                     <span className="flex items-center">
                       <svg
