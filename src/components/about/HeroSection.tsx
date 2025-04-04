@@ -5,7 +5,7 @@ const HeroSection: React.FC = () => {
   return (
     <section className="py-16 md:py-24 min-h-[50vh] relative overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 opacity-20">
+      <div className="absolute inset-0 z-0 opacity-10">
         <img 
           src="/lovable-uploads/3f0413f6-31be-4eb3-bf38-e53d02dc0532.jpg" 
           alt="Abstract Technological Pattern" 

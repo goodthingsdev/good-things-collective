@@ -13,7 +13,7 @@ const Footer = () => {
               A remote-first software collective crafting secure, ethical, and privacy-focused digital solutions.
             </p>
             <div className="flex space-x-4 mt-6">
-              <a href="https://github.com/goodthings.dev" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-collective-beige/10 hover:bg-collective-orange transition-colors">
+              <a href="https://github.com/goodthingsdev" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-collective-beige/10 hover:bg-collective-orange transition-colors">
                 <Github size={18} className="text-collective-beige" />
               </a>
               <a href="https://discord.gg/goodcollective" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-collective-beige/10 hover:bg-collective-orange transition-colors">
