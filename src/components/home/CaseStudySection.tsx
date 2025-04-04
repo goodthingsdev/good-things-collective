@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,14 +19,14 @@ const CaseStudySection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <CaseStudyCard 
-            title="AgTrack: Farm-to-Table Traceability Platform"
-            category="AgTech & Sustainability"
-            image="/lovable-uploads/d4412982-a3ba-47b1-87fd-d636a2ae6bb6.png"
+            title="StoryBird.io: AI-Powered Storytelling Platform"
+            category="AI & Content Creation"
+            image="/lovable-uploads/storybird.png"
           />
           <CaseStudyCard 
-            title="SecureChain: Blockchain Supply Verification"
-            category="Security & Traceability"
-            image="/lovable-uploads/4ea9065d-0225-4015-bb87-dee6fa6675b2.png"
+            title="NuMundo.org: Global Regenerative Living Network"
+            category="Sustainability & Community"
+            image="/lovable-uploads/numundo.png"
           />
         </div>
       </div>

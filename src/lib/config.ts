@@ -6,4 +6,5 @@ export const config = {
   social: {
     github: 'https://github.com/goodthingsdev',
   },
+  testimonialsEnabled: false,
 } as const; 
