@@ -53,7 +53,11 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden items-center space-x-8 md:flex">
             <NavLinks />
-            <Button asChild variant="outline" className="bg-collective-beige hover:bg-collective-orange text-collective-black hover:text-collective-beige">
+            <Button
+              asChild
+              variant="outline"
+              className="bg-collective-beige text-collective-black hover:bg-collective-orange hover:text-collective-beige"
+            >
               <Link href="/contact">Get in touch</Link>
             </Button>
           </div>

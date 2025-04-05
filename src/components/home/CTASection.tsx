@@ -4,8 +4,6 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
-import { config } from "../../lib/config";
-
 const CTASection = () => {
   return (
     <section className="bg-collective-black py-24 text-collective-beige">

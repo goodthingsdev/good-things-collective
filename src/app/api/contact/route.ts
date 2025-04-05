@@ -1,7 +1,6 @@
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
-import { CreateEmailResponse } from "resend";
 
 import { createContactEmailHtml } from "@/lib/email-templates/contact";
 import { RateLimiter } from "@/lib/rate-limit";
@@ -22,15 +21,21 @@ export async function POST(request: Request) {
     const forwardedFor = headersList.get("x-forwarded-for");
     const ip = forwardedFor ? forwardedFor.split(",")[0] : "unknown";
 
-    debug && console.log(`[${requestId}] Processing contact form submission from IP: ${ip}`);
+    if (debug) {
+      // eslint-disable-next-line no-console
+      console.log(`[${requestId}] Processing contact form submission from IP: ${ip}`);
+    }
 
     // Check rate limit
     const rateLimit = rateLimiter.check(ip);
 
     if (!rateLimit.success) {
-      debug && console.log(
-        `[${requestId}] Rate limit exceeded for IP: ${ip}. Next reset at: ${rateLimit.resetTime}`
-      );
+      if (debug) {
+        // eslint-disable-next-line no-console
+        console.log(
+          `[${requestId}] Rate limit exceeded for IP: ${ip}. Next reset at: ${rateLimit.resetTime}`
+        );
+      }
       return NextResponse.json(
         {
           success: false,
@@ -42,38 +47,54 @@ export async function POST(request: Request) {
       );
     }
 
-    debug && console.log(
-      `[${requestId}] Rate limit check passed. Remaining attempts: ${rateLimit.remainingAttempts}`
-    );
+    if (debug) {
+      // eslint-disable-next-line no-console
+      console.log(
+        `[${requestId}] Rate limit check passed. Remaining attempts: ${rateLimit.remainingAttempts}`
+      );
+    }
 
     const data = await request.json();
 
     // Validate the request data
-    debug && console.log(`[${requestId}] Validating form data...`);
+    if (debug) {
+      // eslint-disable-next-line no-console
+      console.log(`[${requestId}] Validating form data...`);
+    }
     const validatedData = contactFormSchema.parse(data);
-    debug && console.log(`[${requestId}] Form data validation successful`);
+    if (debug) {
+      // eslint-disable-next-line no-console
+      console.log(`[${requestId}] Form data validation successful`);
+    }
 
     // Debug logging
-    debug && console.log(`[${requestId}] Contact form submission details:`, {
-      timestamp: new Date().toISOString(),
-      name: validatedData.name,
-      email: validatedData.email,
-      hasCompany: !!validatedData.company,
-      messageLength: validatedData.message.length,
-      ip,
-      remainingAttempts: rateLimit.remainingAttempts,
-    });
+    if (debug) {
+      // eslint-disable-next-line no-console
+      console.log(`[${requestId}] Contact form submission details:`, {
+        timestamp: new Date().toISOString(),
+        name: validatedData.name,
+        email: validatedData.email,
+        hasCompany: !!validatedData.company,
+        messageLength: validatedData.message.length,
+        ip,
+        remainingAttempts: rateLimit.remainingAttempts,
+      });
+    }
 
     // Send email
     const { name, email, company, message } = validatedData;
 
-    debug && console.log(`[${requestId}] Preparing to send email via Resend...`);
-    debug && console.log(`[${requestId}] Email configuration:`, {
-      from: `${name} via Good Things Collective <${senderEmail}>`,
-      replyTo: email,
-      to: contactEmail,
-      subject: `New Contact Form Submission from ${name}`,
-    });
+    if (debug) {
+      // eslint-disable-next-line no-console
+      console.log(`[${requestId}] Preparing to send email via Resend...`);
+      // eslint-disable-next-line no-console
+      console.log(`[${requestId}] Email configuration:`, {
+        from: `${name} via Good Things Collective <${senderEmail}>`,
+        replyTo: email,
+        to: contactEmail,
+        subject: `New Contact Form Submission from ${name}`,
+      });
+    }
 
     try {
       const response = await resend.emails.send({
@@ -100,10 +121,13 @@ export async function POST(request: Request) {
         throw new Error("Resend API returned an invalid response: missing email ID");
       }
 
-      debug && console.log(`[${requestId}] Email sent successfully:`, {
-        emailId: response.data.id,
-        timestamp: new Date().toISOString(),
-      });
+      if (debug) {
+        // eslint-disable-next-line no-console
+        console.log(`[${requestId}] Email sent successfully:`, {
+          emailId: response.data.id,
+          timestamp: new Date().toISOString(),
+        });
+      }
 
       return NextResponse.json({
         success: true,
@@ -112,10 +136,11 @@ export async function POST(request: Request) {
       });
     } catch (emailError) {
       const errorMessage = emailError instanceof Error ? emailError.message : String(emailError);
+      // eslint-disable-next-line no-console
       console.error(`[${requestId}] Email send failed: ${errorMessage}`);
 
       // Return Resend API errors directly
-      if (errorMessage.includes('Resend')) {
+      if (errorMessage.includes("Resend")) {
         return NextResponse.json(
           {
             success: false,
@@ -135,6 +160,7 @@ export async function POST(request: Request) {
       );
     }
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(`[${requestId}] Error processing contact form:`, error);
 
     // Handle validation errors
@@ -154,9 +180,9 @@ export async function POST(request: Request) {
 
     // Fallback error for all other cases
     return NextResponse.json(
-      { 
-        success: false, 
-        message: "An unexpected error occurred while processing your request" 
+      {
+        success: false,
+        message: "An unexpected error occurred while processing your request",
       },
       { status: 500 }
     );

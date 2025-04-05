@@ -116,13 +116,11 @@ export default function Page() {
                 quote="The team at Good Things Collective delivered a robust and scalable solution that exceeded our expectations. Their attention to security and ethical considerations was particularly impressive."
                 author="Sarah Johnson"
                 company="TechCorp"
-                image="/uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png"
               />
               <TestimonialCard
                 quote="Working with Good Things Collective was a game-changer for our business. Their expertise in sustainable technology solutions helped us achieve our environmental goals while improving our bottom line."
                 author="Michael Chen"
                 company="GreenTech Solutions"
-                image="/uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png"
               />
             </div>
           </div>

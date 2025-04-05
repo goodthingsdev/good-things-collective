@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Space_Mono, Inter } from "next/font/google";
 
 import "./globals.css";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 import ClientLayout from "../components/ClientLayout";
 

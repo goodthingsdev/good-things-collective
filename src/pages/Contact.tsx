@@ -1,9 +1,9 @@
 "use client";
 
 import { Send, Mail, MapPin, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 import { ZodError } from "zod";
-import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -283,7 +283,7 @@ const Contact = () => {
                   Schedule a 30-minute call with our team to discuss your project in detail.
                 </p>
                 <Link
-                  href={process.env.NEXT_PUBLIC_SCHEDULE_LINK || '#'}
+                  href={process.env.NEXT_PUBLIC_SCHEDULE_LINK || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

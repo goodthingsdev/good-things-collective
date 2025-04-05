@@ -117,13 +117,11 @@ const CaseStudies = () => {
                 quote="The team at GOOD! Collective delivered beyond our expectations. Their focus on security and ethical considerations set them apart from other agencies we've worked with."
                 author="Maria Rodriguez"
                 company="Foods Co."
-                image="/uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png"
               />
               <TestimonialCard
                 quote="Their expertise in agricultural technology was invaluable. They understood our specific challenges and built a solution that transformed our supply chain visibility."
                 author="John Tetenbaum"
                 company="FarmFresh Inc."
-                image="/uploads/8c0404e6-dca9-4cb3-8a88-6308ec728519.png"
               />
             </div>
           </div>

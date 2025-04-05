@@ -6,7 +6,6 @@ interface TestimonialCardProps {
   quote: string;
   author: string;
   company: string;
-  image: string;
 }
 
 const QuoteIcon = () => (
@@ -22,7 +21,7 @@ const QuoteIcon = () => (
   </svg>
 );
 
-const TestimonialCard = ({ quote, author, company, image }: TestimonialCardProps) => {
+const TestimonialCard = ({ quote, author, company }: TestimonialCardProps) => {
   return (
     <div className="border-collective.black/5 rounded-lg border bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
       <QuoteIcon />

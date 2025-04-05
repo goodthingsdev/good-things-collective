@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 
 import { Button } from "@/components/ui/button";
-import { config } from "@/lib/config";
 
 const ContactCTA: React.FC = () => {
   return (
