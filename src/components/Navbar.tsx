@@ -45,7 +45,7 @@ const Navbar = () => {
               <img
                 src="/uploads/dd0c2c65-b548-46ec-9c08-392bf73a05c4.png"
                 alt="GOOD! Logo"
-                className="h-full w-auto object-contain"
+                className="h-[4rem] w-auto object-contain"
               />
             </div>
           </Link>
@@ -53,7 +53,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden items-center space-x-8 md:flex">
             <NavLinks />
-            <Button asChild variant="outline" size="lg" className="ml-2">
+            <Button asChild variant="outline" className="bg-collective-beige hover:bg-collective-orange text-collective-black hover:text-collective-beige">
               <Link href="/contact">Get in touch</Link>
             </Button>
           </div>
