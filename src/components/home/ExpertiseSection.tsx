@@ -32,10 +32,7 @@ const ExpertiseSection = () => {
                 icon={<LineChart className="h-5 w-5" />}
                 title="AgTech & Traceability"
               />
-              <ExpertiseCard
-                icon={<LineChart className="h-5 w-5" />}
-                title="Web3 & Blockchain"
-              />
+              <ExpertiseCard icon={<LineChart className="h-5 w-5" />} title="Web3 & Blockchain" />
               <ExpertiseCard icon={<Database className="h-5 w-5" />} title="CI/CD Automation" />
             </div>
           </div>
