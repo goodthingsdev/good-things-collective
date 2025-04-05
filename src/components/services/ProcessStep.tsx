@@ -8,7 +8,7 @@ const ProcessStep = ({ number, title, description }: ProcessStepProps) => {
   return (
     <div className="flex">
       <div className="mr-4">
-        <div className="w-10 h-10 rounded-full bg-collective-black text-collective-beige flex items-center justify-center font-mono font-bold">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-collective-black font-mono font-bold text-collective-beige">
           {number}
         </div>
       </div>
@@ -20,4 +20,4 @@ const ProcessStep = ({ number, title, description }: ProcessStepProps) => {
   );
 };
 
-export default ProcessStep; 
+export default ProcessStep;

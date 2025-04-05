@@ -1,33 +1,35 @@
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
+"use client";
+
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+
+import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
+    console.error("404 Error: User attempted to access non-existent route:", pathname);
+  }, [pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-collective-beige pt-24">
-      <div className="text-center px-6">
-        <h1 className="text-7xl md:text-9xl font-bold mb-4">404</h1>
+    <div className="flex min-h-screen items-center justify-center bg-collective-beige pt-24">
+      <div className="px-6 text-center">
+        <h1 className="mb-4 text-7xl font-bold md:text-9xl">404</h1>
         <div className="mb-8">
-          <img 
-            src="/uploads/762fefac-5d79-4490-9917-579f60d97be4.png" 
-            alt="Page not found" 
-            className="w-64 mx-auto"
+          <img
+            src="/uploads/762fefac-5d79-4490-9917-579f60d97be4.png"
+            alt="Page not found"
+            className="mx-auto w-64"
           />
         </div>
-        <p className="text-xl md:text-2xl text-collective-black/80 mb-8">Oops! This page doesn't exist.</p>
+        <p className="mb-8 text-xl text-collective-black/80 md:text-2xl">
+          Oops! This page doesn't exist.
+        </p>
         <Button asChild size="lg">
-          <Link to="/">
+          <Link href="/">
             <ArrowLeft className="mr-2 h-4 w-4" /> Return to Home
           </Link>
         </Button>
