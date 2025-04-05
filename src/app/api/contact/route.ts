@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
+import { CreateEmailResponse } from "resend";
 
 import { createContactEmailHtml } from "@/lib/email-templates/contact";
 import { RateLimiter } from "@/lib/rate-limit";
@@ -75,7 +76,7 @@ export async function POST(request: Request) {
     });
 
     try {
-      const { data: emailResult } = await resend.emails.send({
+      const response = await resend.emails.send({
         from: `${name} via Good Things Collective <${senderEmail}>`,
         replyTo: email,
         to: contactEmail,
@@ -89,20 +90,80 @@ export async function POST(request: Request) {
         }),
       });
 
+      // Check if the response indicates an error
+      if (!response || response.error) {
+        throw new Error(response?.error?.message || "Resend API returned an error");
+      }
+
+      // Verify we have a valid response
+      if (!response.data?.id) {
+        throw new Error("Resend API returned an invalid response: missing email ID");
+      }
+
       debug && console.log(`[${requestId}] Email sent successfully:`, {
-        emailId: emailResult?.id,
+        emailId: response.data.id,
         timestamp: new Date().toISOString(),
       });
-    } catch (emailError) {
-      console.error(`[${requestId}] Failed to send email:`, emailError);
-      throw new Error("Failed to send email");
-    }
 
-    return NextResponse.json({
-      success: true,
-      message: "Form submission received successfully",
-      remainingAttempts: rateLimit.remainingAttempts,
-    });
+      return NextResponse.json({
+        success: true,
+        message: "Form submission received successfully",
+        remainingAttempts: rateLimit.remainingAttempts,
+      });
+    } catch (emailError) {
+      // Cleaner error logging
+      const errorMessage = emailError instanceof Error ? emailError.message : String(emailError);
+      console.error(`[${requestId}] Email send failed: ${errorMessage}`);
+
+      // Check if it's a Resend authorization error
+      if (emailError instanceof Error && errorMessage.includes('Not authorized')) {
+        return NextResponse.json(
+          {
+            success: false,
+            message: errorMessage, // Pass through the actual error message
+            error: {
+              type: "resend_authorization_error",
+              message: errorMessage,
+              details: "Please verify your Resend API key and domain configuration.",
+            },
+          },
+          { status: 403 }
+        );
+      }
+
+      // Check if it's a general Resend API error
+      if (emailError instanceof Error) {
+        const isResendError = errorMessage.includes('resend') || errorMessage.includes('Resend');
+        
+        if (isResendError) {
+          return NextResponse.json(
+            {
+              success: false,
+              message: errorMessage, // Pass through the actual error message
+              error: {
+                type: "resend_api_error",
+                message: errorMessage,
+                details: "There was an issue with the email service.",
+              },
+            },
+            { status: 500 }
+          );
+        }
+      }
+
+      return NextResponse.json(
+        {
+          success: false,
+          message: errorMessage, // Pass through the actual error message
+          error: {
+            type: "email_error",
+            message: errorMessage,
+            details: "An unexpected error occurred while sending the email.",
+          },
+        },
+        { status: 500 }
+      );
+    }
   } catch (error) {
     console.error(`[${requestId}] Error processing contact form:`, error);
 
@@ -134,6 +195,11 @@ export async function POST(request: Request) {
         {
           success: false,
           message: "Failed to send email. Please try again later.",
+          error: {
+            type: "email_error",
+            message: error.message,
+            details: error.stack,
+          },
         },
         { status: 500 }
       );
