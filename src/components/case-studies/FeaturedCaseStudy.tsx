@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 
 interface FeaturedCaseStudyProps {
@@ -18,19 +19,19 @@ const FeaturedCaseStudy = ({
   solution,
   results,
   image,
-  projectUrl
+  projectUrl,
 }: FeaturedCaseStudyProps) => {
   return (
-    <section className="section bg-collective-black text-collective-beige pt-12 pb-16">
+    <section className="section bg-collective-black pb-16 pt-12 text-collective-beige">
       <div className="section-inner">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="space-y-6">
-            <div className="inline-block mb-2">
-              <div className="px-4 py-1 rounded-full bg-collective-beige/10 text-sm">
+            <div className="mb-2 inline-block">
+              <div className="rounded-full bg-collective-beige/10 px-4 py-1 text-sm">
                 Featured Project
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
+            <h2 className="text-3xl font-bold md:text-4xl">{title}</h2>
             <p className="opacity-80">{description}</p>
             <div className="space-y-4 pt-2">
               <div>
@@ -48,7 +49,11 @@ const FeaturedCaseStudy = ({
             </div>
             {projectUrl && (
               <div className="pt-4">
-                <Button asChild variant="outline" className="border-collective-beige text-collective-beige bg-transparent hover:bg-collective-beige/10">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-collective-beige bg-transparent text-collective-beige hover:bg-collective-beige/10"
+                >
                   <a href={projectUrl} target="_blank" rel="noopener noreferrer">
                     View Project <ArrowUpRight className="ml-2 h-4 w-4" />
                   </a>
@@ -57,11 +62,7 @@ const FeaturedCaseStudy = ({
             )}
           </div>
           <div className="order-first lg:order-last">
-            <img 
-              src={image} 
-              alt={title} 
-              className="rounded-lg w-full"
-            />
+            <img src={image} alt={title} className="w-full rounded-lg" />
           </div>
         </div>
       </div>
@@ -69,4 +70,4 @@ const FeaturedCaseStudy = ({
   );
 };
 
-export default FeaturedCaseStudy; 
+export default FeaturedCaseStudy;

@@ -1,11 +1,16 @@
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import { Loader } from 'lucide-react';
+import { Loader } from "lucide-react";
+import { useState, useEffect } from "react";
 
-const Layout = () => {
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -13,27 +18,25 @@ const Layout = () => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-collective-beige">
+      <div className="flex min-h-screen items-center justify-center bg-collective-beige">
         <div className="flex flex-col items-center justify-center gap-4">
-          <Loader className="w-12 h-12 text-collective-black animate-spin" />
-          <div className="text-collective-black font-mono text-sm">GOOD! Collective</div>
+          <Loader className="h-12 w-12 animate-spin text-collective-black" />
+          <div className="font-mono text-sm text-collective-black">GOOD! Collective</div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex-grow">
-        <Outlet />
-      </main>
+      <main className="flex-grow">{children}</main>
       <Footer />
     </div>
   );

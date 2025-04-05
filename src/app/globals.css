@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 25% 91%;
+    --foreground: 0 0% 0%;
+    --card: 36 25% 91%;
+    --card-foreground: 0 0% 0%;
+    --popover: 36 25% 95%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 36 25% 91%;
+    --secondary: 15 100% 60%;
+    --secondary-foreground: 36 25% 91%;
+    --muted: 36 15% 80%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 15 100% 60%;
+    --accent-foreground: 36 25% 91%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 36 25% 91%;
+    --border: 36 15% 80%;
+    --input: 36 15% 80%;
+    --ring: 15 100% 60%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 36 25% 91%;
+    --card: 0 0% 5%;
+    --card-foreground: 36 25% 91%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 36 25% 91%;
+    --primary: 36 25% 91%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 15 100% 60%;
+    --secondary-foreground: 36 25% 91%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 36 15% 70%;
+    --accent: 15 100% 60%;
+    --accent-foreground: 36 25% 91%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 36 25% 91%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 15 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-collective-beige text-collective-black font-mono;
+  }
+  
+  .case-study-image {
+    @apply rounded-md shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .section {
+    @apply py-24 md:py-32;
+  }
+  
+  .section-inner {
+    @apply container max-w-6xl mx-auto px-6;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bg-pattern {
+    background-image: url('/uploads/762fefac-5d79-4490-9917-579f60d97be4.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+  }
+
+  .btn-primary {
+    @apply bg-collective-orange text-white hover:bg-collective-orange/90;
+  }
+
+  .btn-outline {
+    @apply border border-collective-black bg-transparent hover:bg-collective-black/10 text-collective-black;
+  }
+} 
