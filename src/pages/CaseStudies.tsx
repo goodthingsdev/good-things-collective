@@ -52,7 +52,7 @@ const CaseStudies = () => {
               category="Sustainability & Community"
               description="A platform connecting people with regenerative living projects worldwide, facilitating knowledge sharing and community building for sustainable living."
               image="/uploads/SCR-20250404-kprt.png"
-              technologies={["React", "Node.js", "PostgreSQL", "Mapbox", "Stripe"]}
+              technologies={["React", "Node.js", "MongoDB", "Mapbox", "Stripe"]}
               projectUrl="https://numundo.org/"
             />
           </div>
