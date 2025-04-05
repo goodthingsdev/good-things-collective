@@ -3,6 +3,7 @@
 import { Send, Mail, MapPin, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { ZodError } from "zod";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -281,12 +282,18 @@ const Contact = () => {
                 <p className="mb-6 opacity-75">
                   Schedule a 30-minute call with our team to discuss your project in detail.
                 </p>
-                <Button
-                  variant="outline"
-                  className="w-full border-collective-beige bg-transparent text-collective-beige hover:bg-collective-beige/10"
+                <Link
+                  href={process.env.NEXT_PUBLIC_SCHEDULE_LINK || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Schedule Now <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full border-collective-beige bg-transparent text-collective-beige hover:bg-collective-beige/10"
+                  >
+                    Schedule Now <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
