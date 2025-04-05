@@ -20,7 +20,7 @@ const CTASection = () => {
             variant="outline"
             className="border-collective-beige bg-transparent text-collective-beige hover:bg-collective-beige/10"
           >
-            <a href={`mailto:${config.email}`}>Email us</a>
+            <Link href="/contact">Email us</Link>
           </Button>
           <Button
             asChild

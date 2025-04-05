@@ -131,9 +131,9 @@ const Contact = () => {
             </div>
             <div className="mt-6 md:mt-0">
               <Button asChild variant="outline">
-                <a href={`mailto:${config.email}`}>
+                <Link href="#contact-form">
                   Email us <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
@@ -150,7 +150,7 @@ const Contact = () => {
                 Fill out the form below and we'll get back to you as soon as possible.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
                   <Input
