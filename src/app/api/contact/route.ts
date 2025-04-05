@@ -111,55 +111,25 @@ export async function POST(request: Request) {
         remainingAttempts: rateLimit.remainingAttempts,
       });
     } catch (emailError) {
-      // Cleaner error logging
       const errorMessage = emailError instanceof Error ? emailError.message : String(emailError);
       console.error(`[${requestId}] Email send failed: ${errorMessage}`);
 
-      // Check if it's a Resend authorization error
-      if (emailError instanceof Error && errorMessage.includes('Not authorized')) {
+      // Return Resend API errors directly
+      if (errorMessage.includes('Resend')) {
         return NextResponse.json(
           {
             success: false,
-            message: errorMessage, // Pass through the actual error message
-            error: {
-              type: "resend_authorization_error",
-              message: errorMessage,
-              details: "Please verify your Resend API key and domain configuration.",
-            },
+            message: errorMessage,
           },
-          { status: 403 }
+          { status: 500 }
         );
       }
 
-      // Check if it's a general Resend API error
-      if (emailError instanceof Error) {
-        const isResendError = errorMessage.includes('resend') || errorMessage.includes('Resend');
-        
-        if (isResendError) {
-          return NextResponse.json(
-            {
-              success: false,
-              message: errorMessage, // Pass through the actual error message
-              error: {
-                type: "resend_api_error",
-                message: errorMessage,
-                details: "There was an issue with the email service.",
-              },
-            },
-            { status: 500 }
-          );
-        }
-      }
-
+      // Fallback error for email sending
       return NextResponse.json(
         {
           success: false,
-          message: errorMessage, // Pass through the actual error message
-          error: {
-            type: "email_error",
-            message: errorMessage,
-            details: "An unexpected error occurred while sending the email.",
-          },
+          message: "Failed to send email. Please try again later.",
         },
         { status: 500 }
       );
@@ -169,13 +139,6 @@ export async function POST(request: Request) {
 
     // Handle validation errors
     if (error instanceof ZodError) {
-      debug && console.log(`[${requestId}] Validation errors:`, {
-        errors: error.errors.map((err) => ({
-          field: err.path.join("."),
-          message: err.message,
-        })),
-      });
-
       return NextResponse.json(
         {
           success: false,
@@ -189,24 +152,12 @@ export async function POST(request: Request) {
       );
     }
 
-    // Check if it's a Resend API error
-    if (error instanceof Error && error.message === "Failed to send email") {
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Failed to send email. Please try again later.",
-          error: {
-            type: "email_error",
-            message: error.message,
-            details: error.stack,
-          },
-        },
-        { status: 500 }
-      );
-    }
-
+    // Fallback error for all other cases
     return NextResponse.json(
-      { success: false, message: "Failed to process form submission" },
+      { 
+        success: false, 
+        message: "An unexpected error occurred while processing your request" 
+      },
       { status: 500 }
     );
   }
