@@ -1,5 +1,5 @@
 export const config = {
-  email: "collective@goodthings.dev",
+  email: process.env.COLLECTIVE_EMAIL,
   siteName: "Good Things Collective",
   siteUrl: "https://goodthings.dev",
   pageTitle: "Good Things Collective - Secure and Ethical Digital Solutions",
