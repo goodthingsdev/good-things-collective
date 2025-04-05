@@ -18,13 +18,6 @@ const NotFound = () => {
     <div className="flex min-h-screen items-center justify-center bg-collective-beige pt-24">
       <div className="px-6 text-center">
         <h1 className="mb-4 text-7xl font-bold md:text-9xl">404</h1>
-        <div className="mb-8">
-          <img
-            src="/uploads/762fefac-5d79-4490-9917-579f60d97be4.png"
-            alt="Page not found"
-            className="mx-auto w-64"
-          />
-        </div>
         <p className="mb-8 text-xl text-collective-black/80 md:text-2xl">
           Oops! This page doesn't exist.
         </p>
