@@ -5,7 +5,8 @@ import React from "react";
 interface TestimonialCardProps {
   quote: string;
   author: string;
-  role: string;
+  company: string;
+  image: string;
 }
 
 const QuoteIcon = () => (
@@ -21,14 +22,14 @@ const QuoteIcon = () => (
   </svg>
 );
 
-const TestimonialCard = ({ quote, author, role }: TestimonialCardProps) => {
+const TestimonialCard = ({ quote, author, company, image }: TestimonialCardProps) => {
   return (
     <div className="border-collective.black/5 rounded-lg border bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
       <QuoteIcon />
       <p className="mt-4 text-lg font-medium">{quote}</p>
       <div className="mt-6">
         <p className="font-bold">{author}</p>
-        <p className="text-collective.gray text-sm">{role}</p>
+        <p className="text-collective.gray text-sm">{company}</p>
       </div>
     </div>
   );
