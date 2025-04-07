@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
   try {
     // Get IP address for rate limiting
-    const headersList = headers();
+    const headersList = await headers();
     const forwardedFor = headersList.get("x-forwarded-for");
     const ip = forwardedFor ? forwardedFor.split(",")[0] : "unknown";
 
