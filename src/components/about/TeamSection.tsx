@@ -7,7 +7,7 @@ import TeamMember from "./TeamMember";
 const teamMembers = [
   {
     name: "Lukas Sommer",
-    role: "Senior Software Engineer",
+    role: "Engineering Lead",
     location: "PRT",
     image: "/uploads/984d8341-b5f2-4536-8715-b1323031b223.png",
     square: true,

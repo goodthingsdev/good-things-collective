@@ -17,7 +17,7 @@ const CaseStudyCard = ({ title, category, image }: CaseStudyCardProps) => {
         <img
           src={image}
           alt={title}
-          className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-72"
+          className="h-64 w-full object-cover object-top transition-transform duration-500 group-hover:scale-105 md:h-72"
         />
       </div>
       <div className="space-y-3">

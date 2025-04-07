@@ -95,6 +95,7 @@ export default function Page() {
               image="/uploads/SCR-20250404-kttc.png"
               technologies={["Grafana", "Loki", "Prometheus", "Node Exporter", "AWS"]}
               projectUrl="https://github.com/lukesmmr/grafana-loki-stack"
+              projectButtonText="View on GitHub"
             />
           </div>
         </div>
@@ -126,6 +127,21 @@ export default function Page() {
           </div>
         </section>
       )}
+
+      {/* Producers Trust Mobile App */}
+      <FeaturedCaseStudy
+        title="Producers Trust Mobile: On-the-ground Farmer Digitization"
+        description="A mobile application empowering farmers with digital tools for MRV (Measure, Report, and Verify) processes, enabling comprehensive data capture and sustainability claim verification."
+        challenge="Creating a mobile solution that enables farmers to capture and verify sustainability data in the field, while maintaining data integrity and connecting to a comprehensive supply chain ecosystem."
+        solution="Developed a React Native application with Expo, integrated with Auth0 for secure authentication and GraphQL API for seamless data flow. The app enables end-to-end cycle management from first-mile data collection to enterprise reporting."
+        results="Enabled farmers to digitize their operations, capture sustainability evidence, and build traceability stories while connecting to a comprehensive ecosystem for sustainability claims verification."
+        image="/uploads/producers-trust-app.png"
+        technologies={["React Native", "Expo", "Auth0", "GraphQL", "Mobile Development"]}
+        projectUrl="https://apps.apple.com/st/app/producers-trust/id6502012079"
+        secondaryProjectUrl="https://play.google.com/store/apps/details?id=com.producerstrust.agripreneur&hl=de"
+        primaryButtonText="View on App Store"
+        secondaryButtonText="View on Play Store"
+      />
 
       {/* CTA Section */}
       <section className="section">
