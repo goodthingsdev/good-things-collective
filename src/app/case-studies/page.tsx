@@ -139,8 +139,8 @@ export default function Page() {
         technologies={["React Native", "Expo", "Auth0", "GraphQL", "Mobile Development"]}
         projectUrl="https://apps.apple.com/st/app/producers-trust/id6502012079"
         secondaryProjectUrl="https://play.google.com/store/apps/details?id=com.producerstrust.agripreneur&hl=de"
-        primaryButtonText="Download on App Store"
-        secondaryButtonText="Download on Play Store"
+        primaryButtonText="View on App Store"
+        secondaryButtonText="View on Play Store"
       />
 
       {/* CTA Section */}
