@@ -69,7 +69,7 @@ const FeaturedCaseStudy = ({
                 </div>
               )}
             </div>
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-col gap-4 pt-4 sm:flex-row">
               {projectUrl && (
                 <Button
                   asChild
