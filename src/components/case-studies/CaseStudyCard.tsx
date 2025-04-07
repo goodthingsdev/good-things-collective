@@ -10,6 +10,7 @@ interface CaseStudyCardProps {
   image: string;
   technologies: string[];
   projectUrl?: string;
+  projectButtonText?: string;
 }
 
 const CaseStudyCard = ({
@@ -19,6 +20,7 @@ const CaseStudyCard = ({
   image,
   technologies,
   projectUrl,
+  projectButtonText = "View Project",
 }: CaseStudyCardProps) => {
   return (
     <div className="overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md">
@@ -44,7 +46,7 @@ const CaseStudyCard = ({
         {projectUrl && (
           <Button asChild variant="ghost" className="group">
             <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-              View Project
+              {projectButtonText}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>

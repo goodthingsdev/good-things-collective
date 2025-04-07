@@ -32,7 +32,7 @@ const FeaturedCaseStudy = ({
   return (
     <section className="section bg-collective-black pb-16 pt-12 text-collective-beige">
       <div className="section-inner">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
           <div className="space-y-6">
             <div className="mb-2 inline-block">
               <div className="rounded-full bg-collective-beige/10 px-4 py-1 text-sm">
@@ -56,8 +56,16 @@ const FeaturedCaseStudy = ({
               </div>
               {technologies && (
                 <div>
-                  <h3 className="text-sm font-medium text-collective-orange">Technologies</h3>
-                  <p className="opacity-75">{technologies.join(", ")}</p>
+                  <div className="mt-10 flex flex-wrap gap-2">
+                    {technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full bg-collective-beige/10 px-3 py-1 text-sm text-collective-beige/80"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -87,7 +95,7 @@ const FeaturedCaseStudy = ({
             </div>
           </div>
           <div className="order-first lg:order-last">
-            <img src={image} alt={title} className="w-full rounded-lg" />
+            <img src={image} alt={title} className="mt-[50px] w-full rounded-lg object-contain" />
           </div>
         </div>
       </div>
