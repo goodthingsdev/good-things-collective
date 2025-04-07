@@ -10,6 +10,10 @@ interface FeaturedCaseStudyProps {
   results: string;
   image: string;
   projectUrl?: string;
+  secondaryProjectUrl?: string;
+  technologies?: string[];
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
 }
 
 const FeaturedCaseStudy = ({
@@ -20,6 +24,10 @@ const FeaturedCaseStudy = ({
   results,
   image,
   projectUrl,
+  secondaryProjectUrl,
+  technologies,
+  primaryButtonText = "View Project",
+  secondaryButtonText = "View Project",
 }: FeaturedCaseStudyProps) => {
   return (
     <section className="section bg-collective-black pb-16 pt-12 text-collective-beige">
@@ -46,20 +54,37 @@ const FeaturedCaseStudy = ({
                 <h3 className="text-sm font-medium text-collective-orange">Results</h3>
                 <p className="opacity-75">{results}</p>
               </div>
+              {technologies && (
+                <div>
+                  <h3 className="text-sm font-medium text-collective-orange">Technologies</h3>
+                  <p className="opacity-75">{technologies.join(", ")}</p>
+                </div>
+              )}
             </div>
-            {projectUrl && (
-              <div className="pt-4">
+            <div className="flex gap-4 pt-4">
+              {projectUrl && (
                 <Button
                   asChild
                   variant="outline"
                   className="border-collective-beige bg-transparent text-collective-beige hover:bg-collective-beige/10"
                 >
                   <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-                    View Project <ArrowUpRight className="ml-2 h-4 w-4" />
+                    {primaryButtonText} <ArrowUpRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-              </div>
-            )}
+              )}
+              {secondaryProjectUrl && (
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-collective-beige bg-transparent text-collective-beige hover:bg-collective-beige/10"
+                >
+                  <a href={secondaryProjectUrl} target="_blank" rel="noopener noreferrer">
+                    {secondaryButtonText} <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              )}
+            </div>
           </div>
           <div className="order-first lg:order-last">
             <img src={image} alt={title} className="w-full rounded-lg" />
