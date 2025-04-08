@@ -82,10 +82,7 @@ const Contact = () => {
       if (data.success) {
         toast({
           title: "Message sent!",
-          description:
-            data.remainingAttempts > 0
-              ? `We'll get back to you as soon as possible. You have ${data.remainingAttempts} messages remaining.`
-              : "We'll get back to you as soon as possible.",
+          description: "We'll get back to you as soon as possible.",
         });
         setFormData({
           name: "",
